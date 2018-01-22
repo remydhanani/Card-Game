@@ -1,4 +1,5 @@
 Student Name				Student Number
 Benjamin Laferriere			101011913
 Rahmat Dhanani				100970373
-Farhaz Vasta				101022065
+Farhaz Vasta				    101022065
+Ishita jain					100985613

@@ -52,18 +52,6 @@ public class AppWindow {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnShuffle = new JButton("SHUFFLE STORY");
-		btnShuffle.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Story Deck Shuffled");
-				//add functionality of shuffling the story deck on Start (use random function)
-				ui.shuffleStory();
-			}
-		});
-		btnShuffle.setFont(new Font("Lucida Grande", Font.BOLD, 16));
-		btnShuffle.setBounds(625, 333, 160, 29);
-		frame.getContentPane().add(btnShuffle);
-		
 		JLabel lblPlayer = new JLabel("PLAYER 1");
 		lblPlayer.setFont(new Font("Lucida Grande", Font.BOLD, 18));
 		lblPlayer.setBounds(500, 30, 169, 16);
@@ -73,17 +61,5 @@ public class AppWindow {
 		lblPlayer_1.setFont(new Font("Lucida Grande", Font.BOLD, 18));
 		lblPlayer_1.setBounds(500, 662, 169, 16);
 		frame.getContentPane().add(lblPlayer_1);
-		
-		JButton btnShuffleAdventure = new JButton("SHUFFLE ADVENTURE");
-		btnShuffleAdventure.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Adventure Cards Shuffled");
-				//add functionality of shuffling the adventure cards on Start (use random function)
-				ui.shuffleAdventure();
-			}
-		});
-		btnShuffleAdventure.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		btnShuffleAdventure.setBounds(1096, 333, 176, 30);
-		frame.getContentPane().add(btnShuffleAdventure);
 	}
 }

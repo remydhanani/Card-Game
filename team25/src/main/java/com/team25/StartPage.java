@@ -60,6 +60,11 @@ public class StartPage {
 		frame.getContentPane().setBackground(new Color(0, 128, 0));
 		
 		Button button = new Button("Exit");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		
 		frame.getContentPane().add(button, BorderLayout.SOUTH);
 		button.setBackground(new Color(128,0,0));

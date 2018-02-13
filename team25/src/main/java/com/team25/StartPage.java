@@ -2,6 +2,8 @@ package com.team25;
 
 import java.awt.Color;
 
+import java.awt.image.*;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 
@@ -16,6 +18,8 @@ import java.awt.event.ActionEvent;
 import java.awt.Button;
 
 import java.awt.Image;
+import javax.swing.JPanel;
+import java.awt.Panel;
 
 public class StartPage {
 
@@ -30,7 +34,7 @@ public class StartPage {
 				try {
 					StartPage window = new StartPage();
 					window.frame.setVisible(true);
-					window.frame.setSize(1280, 720);
+						
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -50,58 +54,59 @@ public class StartPage {
 	 */
 	private void initialize() {
 		
-		
-			
-			ImageIcon startpage = new ImageIcon("images//LOGO_ON-AIR_Quest-color.jpg");
-			startpage.getImage();
-		
-		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(0, 128, 0));
+		frame.setBounds(1500, 800, 1500, 800);
+		
 		
 		Button button = new Button("Exit");
+		button.setBounds(6, 230, 85, 70);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
+		frame.getContentPane().setLayout(null);
 		
-		frame.getContentPane().add(button, BorderLayout.SOUTH);
-		button.setBackground(new Color(128,0,0));
+		frame.getContentPane().add(button);
+		//button.setBackground(new Color(128,0,0));
+		
+		JButton btnMultiplayer = new JButton("Multiplayer");
+		btnMultiplayer.setBounds(6, 154, 85, 70);
+		btnMultiplayer.setForeground(Color.ORANGE);
+		btnMultiplayer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		frame.getContentPane().add(btnMultiplayer);
+		
+		
+		
+		//frame.getContentPane().add(lblNewLabel);
 		
 		Button button_1 = new Button("Two Player");
+		button_1.setBounds(10, 67, 85, 70);
+		button_1.setForeground(Color.ORANGE);
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AppWindow newapp = new AppWindow();
 				newapp.newScreen();
 			}
 		});
+		//button_1.setBackground(new Color(128, 0, 0));
+		frame.getContentPane().add(button_1);
+	
 		
-
-		
-		
-		frame.getContentPane().add(button_1, BorderLayout.NORTH);
-		button_1.setBackground(new Color(128,0,0));
-		
-		JButton btnMultiplayer = new JButton("Multiplayer");
-
-		btnMultiplayer.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//AppWindow newapp = new AppWindow();
-				//newapp.newScreen();
-			}
-		});
-		frame.getContentPane().add(btnMultiplayer, BorderLayout.WEST);
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(0, 0, 1500, 800);
+		frame.getContentPane().add(lblNewLabel_1);
 		frame.setBounds(1500, 800, 1500, 800);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+Image img = new ImageIcon(this.getClass().getResource("/Cards/start-1.png")).getImage();
+		
+		lblNewLabel_1.setIcon(new ImageIcon(img));
 		
 		
 	}
-	
-
-
-	
-	
-	
-
 }

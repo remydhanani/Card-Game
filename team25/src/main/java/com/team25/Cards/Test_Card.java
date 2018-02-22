@@ -4,7 +4,7 @@ public class Test_Card extends Adventure_Cards {
 	protected int Min_Bid;
 	
 	// Min_Bid and Special_Quest is 0/null if it doesn't Have One
-	public Test_Card(String Name, String Picture, int Min_Bid,String Special_Quest) {
+	public Test_Card(String Name, String Picture, int Min_Bid) {
 		this.Type = "Test";
 		this.Name = Name;
 		this.Picture = Picture;

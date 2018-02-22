@@ -18,7 +18,16 @@ abstract class Decks {
 			System.out.println("Deck is Empty, Failed to draw a card from deck");
 			return Deck.get(0); ////this will crash the program if it is execuited. this is tempoaray untill i think of a sultion
 		}
-		};
+	};
+		
+	protected ArrayList<Cards> addMultiCards(int num, Cards card){
+		ArrayList<Cards> temp = new ArrayList<Cards>();
+		for(int i=0; i<num; i++) {
+			temp.add(card);
+		}
+		return temp;
+	};
+
 	
 	public ArrayList<Cards> getDeck(){return Deck;}
 }

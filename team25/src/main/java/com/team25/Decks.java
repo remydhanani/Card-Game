@@ -2,6 +2,8 @@ package com.team25;
 
 import com.team25.Cards.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 abstract class Decks {
 	
@@ -9,7 +11,11 @@ abstract class Decks {
 		
 	abstract void create();
 	
-	abstract ArrayList<Cards> shuffe();// will be converted to a public method after
+	ArrayList<Cards> shuffe() {
+		Random seed = new Random(1374568413792536148L);
+		Collections.shuffle(Deck, seed);			
+		return Deck;		
+	}
 	
 	public Cards draw() {
 		if(!Deck.isEmpty()) {
@@ -20,14 +26,14 @@ abstract class Decks {
 		}
 	};
 		
-	protected ArrayList<Cards> addMultiCards(int num, Cards card){
+	protected ArrayList<Cards> addMultiCards(Cards card, int num){
 		ArrayList<Cards> temp = new ArrayList<Cards>();
 		for(int i=0; i<num; i++) {
 			temp.add(card);
 		}
 		return temp;
 	};
-
+	
 	
 	public ArrayList<Cards> getDeck(){return Deck;}
 }

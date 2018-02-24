@@ -82,6 +82,7 @@ public class View {
 			
 			
 			
+			
 			//frame.getContentPane().add(lblNewLabel);
 			
 			Button button_1 = new Button("Two Player");

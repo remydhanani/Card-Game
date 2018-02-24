@@ -17,6 +17,7 @@ abstract class ModelDeck {
 		return Deck;		
 	}
 	
+	
 	public Cards draw() {
 		if(!Deck.isEmpty()) {
 			return Deck.get(0);

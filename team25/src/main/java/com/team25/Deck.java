@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-abstract class ModelDeck {
+abstract class Deck {
 	
 	protected ArrayList<Cards> Deck = new ArrayList<Cards>();
 		

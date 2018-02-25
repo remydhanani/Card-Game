@@ -2,7 +2,7 @@ package com.team25;
 
 import com.team25.Cards.Cards;
 
-public class StoryDeck extends Decks {
+public class StoryDeck extends Deck {
 
 	@Override
 	void create() {

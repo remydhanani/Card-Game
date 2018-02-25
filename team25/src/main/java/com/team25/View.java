@@ -9,6 +9,8 @@ import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.BorderLayout;
 
 import javax.swing.ImageIcon;
@@ -24,6 +26,7 @@ import java.awt.Panel;
 public class View {
 
 		JFrame frame;
+		private int players=2;
 
 		/**
 		 * Launch the application.
@@ -71,31 +74,25 @@ public class View {
 			frame.getContentPane().add(button);
 			//button.setBackground(new Color(128,0,0));
 			
-			JButton btnMultiplayer = new JButton("Multiplayer");
-			btnMultiplayer.setBounds(6, 154, 85, 70);
-			btnMultiplayer.setForeground(Color.ORANGE);
-			btnMultiplayer.addActionListener(new ActionListener() {
+			JButton btnPlay = new JButton("Play");
+			btnPlay.setBounds(6, 154, 85, 70);
+			btnPlay.setForeground(Color.ORANGE);
+			btnPlay.addActionListener(new ActionListener() {
+
 				public void actionPerformed(ActionEvent e) {
+					String playerStr = JOptionPane.showInputDialog("Enter Number of Players");
+					if(playerStr.matches("[0-9]+")) {
+						players = Integer.parseInt(playerStr);
+						if(players <=4 && players>=2) {
+							AppWindow newapp = new AppWindow(players);
+							//newapp.newScreen();
+						}else {
+							JOptionPane.showMessageDialog(frame, "Players should be between 2 and 4", "Dialog", JOptionPane.ERROR_MESSAGE);
+						}
+					}
 				}
 			});
-			frame.getContentPane().add(btnMultiplayer);
-			
-			
-			
-			
-			//frame.getContentPane().add(lblNewLabel);
-			
-			Button button_1 = new Button("Two Player");
-			button_1.setBounds(10, 67, 85, 70);
-			button_1.setForeground(Color.ORANGE);
-			button_1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					AppWindow newapp = new AppWindow();
-					newapp.newScreen();
-				}
-			});
-			//button_1.setBackground(new Color(128, 0, 0));
-			frame.getContentPane().add(button_1);
+			frame.getContentPane().add(btnPlay);
 		
 			
 			JLabel lblNewLabel_1 = new JLabel("");

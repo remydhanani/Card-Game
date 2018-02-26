@@ -1,7 +1,6 @@
 package com.team25;
 
 import java.util.ArrayList;
-
 import com.team25.Cards.*;
 
 public class StoryDeck extends Deck {

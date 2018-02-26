@@ -60,6 +60,7 @@ public class AppWindow {
 		initialize();
 		frame.setVisible(true);
 		JOptionPane.showMessageDialog(frame, "All players are Squire", "Dialog", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(frame, "Click on Adventure Deck to deal", "Dialog", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	/**
@@ -71,31 +72,41 @@ public class AppWindow {
 		frame.getContentPane().setBackground(new Color(0, 128, 0));
 		frame.setBounds(1500, 800, 1500, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		 frame.getContentPane().setLayout(null);
 		
+		 JLabel adventureLabel = new JLabel("Adventure Deck");
+		 adventureLabel.setBounds(1332, 72, 117, 16);
+			adventureLabel.setForeground(Color.ORANGE);
+			frame.getContentPane().add(adventureLabel);
+			
+			JLabel storyLabel = new JLabel("Story Deck");
+			storyLabel.setBounds(1332, 418, 117, 16);
+			storyLabel.setForeground(Color.ORANGE);
+			frame.getContentPane().add(storyLabel);
 		
 		JLabel lblPlayer = new JLabel("PLAYER 1");
+		lblPlayer.setBounds(500, 29, 169, 16);
 		lblPlayer.setForeground(Color.ORANGE);
 		lblPlayer.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-		lblPlayer.setBounds(500, 29, 169, 16);
 		frame.getContentPane().add(lblPlayer);
 		
 		JLabel lblPlayer_1 = new JLabel("PLAYER 2");
+		lblPlayer_1.setBounds(500, 662, 169, 16);
 		lblPlayer_1.setForeground(Color.ORANGE);
 		lblPlayer_1.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-	
-		lblPlayer_1.setBounds(500, 662, 169, 16);
 		frame.getContentPane().add(lblPlayer_1);
 		 
-		 JLabel lblPlayer_2 = new JLabel("Player 3");
-		 lblPlayer_2.setForeground(Color.ORANGE);
+		 JLabel lblPlayer_2 = new JLabel("PLAYER 3");
 		 lblPlayer_2.setBounds(69, 31, 169, 16);
+		 lblPlayer_2.setForeground(Color.ORANGE);
 		 frame.getContentPane().add(lblPlayer_2);
+		 lblPlayer_2.setFont(new Font("Lucida Grande", Font.BOLD, 18));
 		 
-		 JLabel lblPlayer_3 = new JLabel("Player 4");
-		 lblPlayer_3.setForeground(Color.ORANGE);
+		 JLabel lblPlayer_3 = new JLabel("PLAYER 4");
 		 lblPlayer_3.setBounds(58, 664, 169, 16);
+		 lblPlayer_3.setForeground(Color.ORANGE);
 		 frame.getContentPane().add(lblPlayer_3);
+		 lblPlayer_3.setFont(new Font("Lucida Grande", Font.BOLD, 18));
 		 
 
 			rankSquire = new ImageIcon(this.getClass().getResource("/Cards/Ranks_Squire.png")).getImage();
@@ -103,8 +114,8 @@ public class AppWindow {
 			rankChampionKnight = new ImageIcon(this.getClass().getResource("/Cards/Ranks_ChampionKnight.png")).getImage();
 			
 		    player3Shieldbl = new JLabel("Shield3: ");
+		    player3Shieldbl.setBounds(176, 136, 71, 16);
 			player3Shieldbl.setForeground(Color.ORANGE);
-			player3Shieldbl.setBounds(176, 136, 71, 16);
 			frame.getContentPane().add(player3Shieldbl);
 			
 			rank3lbl = new JLabel("Rank3");
@@ -113,8 +124,8 @@ public class AppWindow {
 			rank3lbl.setIcon(new ImageIcon(rankSquire));
 			
 			player4Shieldbl = new JLabel("Shield4: ");
-			player4Shieldbl.setForeground(Color.ORANGE);
 			player4Shieldbl.setBounds(176, 527, 71, 16);
+			player4Shieldbl.setForeground(Color.ORANGE);
 			frame.getContentPane().add(player4Shieldbl);
 			
 			rank4lbl = new JLabel("Rank4");
@@ -124,8 +135,8 @@ public class AppWindow {
 		
 			
 			player1Shieldbl = new JLabel("Shield1: ");
-			player1Shieldbl.setForeground(Color.ORANGE);
 			player1Shieldbl.setBounds(622, 136, 71, 16);
+			player1Shieldbl.setForeground(Color.ORANGE);
 			frame.getContentPane().add(player1Shieldbl);
 			rank1lbl = new JLabel("Rank2");
 			rank1lbl.setBounds(611, 111, 71, 104);
@@ -135,8 +146,8 @@ public class AppWindow {
 			
 			
 			player2Shieldbl = new JLabel("Shield2: ");
-			player2Shieldbl.setForeground(Color.ORANGE);
 			player2Shieldbl.setBounds(622, 527, 71, 16);
+			player2Shieldbl.setForeground(Color.ORANGE);
 			frame.getContentPane().add(player2Shieldbl);
 			
 			rank2lbl = new JLabel("Rank2");
@@ -150,7 +161,7 @@ public class AppWindow {
 		 btnAddShield.setBounds(1319, 707, 117, 29);
 		 btnAddShield.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					String playerStr = JOptionPane.showInputDialog("Enter Number of Players");
+					String playerStr = JOptionPane.showInputDialog("Enter player number to add shield");
 					if(playerStr.matches("[1-"+totalPlayers+"]+")) {
 						addShield(Integer.parseInt(playerStr));
 					}else {
@@ -162,30 +173,25 @@ public class AppWindow {
 		 frame.getContentPane().add(btnAddShield);
 		
 		
+		 
 		JButton lblNewLabel = new JButton("Adventure cards");
+		lblNewLabel.setBounds(1319, 99, 130, 180);
 		lblNewLabel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		
-		
-		
-		
-		lblNewLabel.setBounds(1319, 99, 130, 180);
 		frame.getContentPane().add(lblNewLabel);
 Image img = new ImageIcon(this.getClass().getResource("/Cards/Card2.jpg")).getImage();
 		
 lblNewLabel.setIcon(new ImageIcon(img));
 		
 		JButton label = new JButton("Story cards");
+		label.setBounds(1319, 446, 130, 180);
 		label.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
-		
-		
-		label.setBounds(1319, 446, 130, 180);
 		frame.getContentPane().add(label);
 		
 		Image img2 = new ImageIcon(this.getClass().getResource("/Cards/Card1.png")).getImage();
@@ -237,11 +243,13 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		}
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setForeground(Color.ORANGE);
 		lblNewLabel_1.setBounds(0, 0, 1500, 800);
+		lblNewLabel_1.setForeground(Color.ORANGE);
 		frame.getContentPane().add(lblNewLabel_1);
 		Image img3 = new ImageIcon(this.getClass().getResource("/Cards/BoardBack.png")).getImage();
 		lblNewLabel_1.setIcon(new ImageIcon(img3));
+		
+	
 		
 	
 

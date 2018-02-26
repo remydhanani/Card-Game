@@ -20,10 +20,12 @@ abstract class Deck {
 	
 	public Cards draw() {
 		if(!Deck.isEmpty()) {
-			return Deck.get(0);
+			Cards temp = Deck.get(0);
+			Deck.remove(0);
+			return temp;
 		}else {
 			System.out.println("Deck is Empty, Failed to draw a card from deck");
-			return Deck.get(0); ////this will crash the program if it is execuited. this is tempoaray untill i think of a sultion
+			return null; ////this will crash the program if it is execuited. this is tempoaray untill i think of a sultion
 		}
 	};
 		

@@ -1,6 +1,8 @@
 package com.team25;
 import com.team25.Cards.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 public class AdventureDeck extends Deck {
 
 	@Override
@@ -143,8 +145,9 @@ public class AdventureDeck extends Deck {
 
 	@Override
 	ArrayList<Cards> shuffe() {
-		// TODO Auto-generated method stub
-		return null;
+		Random seed = new Random(1374568413792536148L);
+		Collections.shuffle(Deck, seed);			
+		return Deck;		
 	}
 
 }

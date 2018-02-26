@@ -1,7 +1,7 @@
 package com.team25;
 import com.team25.Cards.*;
 import java.util.ArrayList;
-public class AdventureDeck extends Decks {
+public class AdventureDeck extends Deck {
 
 	@Override
 	void create() {
@@ -139,12 +139,6 @@ public class AdventureDeck extends Decks {
 		Deck.addAll(queenIseultList);
 		//Deck.addAll(merlinList);
 		Deck.addAll(amourList);
+		shuffle();
 	}
-
-	@Override
-	ArrayList<Cards> shuffe() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

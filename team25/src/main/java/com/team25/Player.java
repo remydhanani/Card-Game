@@ -22,7 +22,7 @@ public class Player {
 		}else
 			Rank = ranks.get(ranks.indexOf(Rank) + 1);}
 	public int getShields() {return Shields;}
-	public void addShields(int shields) {Shields = shields;}
+	public void addShields(int shields) {Shields += shields;}
 	public boolean isTurn() {return isTurn;}
 	public void setTurn(boolean isTurn) {this.isTurn = isTurn;}
 	public int getfreeBids() {return freeBids;};

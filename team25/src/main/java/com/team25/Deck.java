@@ -11,7 +11,7 @@ abstract class Deck {
 		
 	abstract void create();
 	
-	ArrayList<Cards> shuffe() {
+	ArrayList<Cards> shuffle() {
 		Random seed = new Random(1374568413792536148L);
 		Collections.shuffle(Deck, seed);			
 		return Deck;		

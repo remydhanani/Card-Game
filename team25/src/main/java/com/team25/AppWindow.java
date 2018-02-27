@@ -96,7 +96,7 @@ public class AppWindow {
 		JOptionPane.showMessageDialog(frame, "All players are Squire", "Dialog", JOptionPane.INFORMATION_MESSAGE);
 		JOptionPane.showMessageDialog(frame, "Click on Adventure Deck to deal", "Dialog", JOptionPane.INFORMATION_MESSAGE);
 		adventureDeck.create();
-		adventureDeck.shuffe();
+		adventureDeck.shuffle();
 		
 	}
 

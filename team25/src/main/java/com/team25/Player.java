@@ -7,7 +7,7 @@ import java.util.List;
 import com.team25.Cards.Cards;
 
 public class Player {
-	List<String> ranks = Arrays.asList("Squire", "Knight", "Champion Knight");
+	List<String> ranks = Arrays.asList("Squire", "Knight", "Champion Knight","Knight of the Round Table");
 	
 	private ArrayList<Cards> Hand = new ArrayList<Cards>();
 	private String Rank;
@@ -17,7 +17,7 @@ public class Player {
 	
 	public String getRank() {return Rank;}	
 	public void nextRank(String rank) {
-		if(ranks.indexOf(Rank) == 2) {
+		if(ranks.indexOf(Rank) == 3) {
 			System.out.println("Max Rank");
 		}else
 			Rank = ranks.get(ranks.indexOf(Rank) + 1);}
@@ -28,8 +28,9 @@ public class Player {
 	public int getfreeBids() {return freeBids;};
 	public void setfreeBids(int num) {};// takes positive or negative
 	
-	public void addCard(Cards card) {};	
+	public void addCard(Cards card) {Hand.add(card);};	
 	public void discard(Cards card) {}
+	public int HandSize() {return Hand.size();}
 
 	
 }

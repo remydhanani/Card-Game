@@ -25,7 +25,7 @@ abstract class Deck {
 			return temp;
 		}else {
 			System.out.println("Deck is Empty, Failed to draw a card from deck");
-			return null; ////this will crash the program if it is execuited. this is tempoaray untill i think of a sultion
+			return null; 
 		}
 	};
 		

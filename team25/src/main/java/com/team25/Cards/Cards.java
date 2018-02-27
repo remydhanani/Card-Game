@@ -3,7 +3,9 @@ package com.team25.Cards;
 public abstract class Cards {
 protected String Name;
 protected String Picture;// the string location of the picture, in the src folder
+protected String Type ;
 
+public String getType() {return Type;}
 public String getPicture() {return Picture;}
 public String getName() {return Name;}
 /**

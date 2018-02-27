@@ -1,6 +1,6 @@
 package com.team25.Cards;
 
-public class Weapon_Card extends Adventure_Cards {
+public class Weapon_Card extends Cards {
 	protected int Power;
 
 	public Weapon_Card(String Name, String Picture, int Power) {

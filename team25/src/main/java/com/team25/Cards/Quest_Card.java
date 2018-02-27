@@ -1,6 +1,6 @@
 package com.team25.Cards;
 
-public class Quest_Card extends Story_Cards {
+public class Quest_Card extends Cards {
 	protected final int Num_Stages;
 	protected final String Quest_Foe;
 		

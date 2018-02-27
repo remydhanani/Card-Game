@@ -1,6 +1,6 @@
 package com.team25.Cards;
 
-public class Ally_Card extends Adventure_Cards {
+public class Ally_Card extends Cards {
 	protected int Power;
 	protected int Bid = 0;
 	protected int Quest_Power = 0;

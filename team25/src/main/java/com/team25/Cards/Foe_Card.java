@@ -1,6 +1,6 @@
 package com.team25.Cards;
 
-public class Foe_Card extends Adventure_Cards {
+public class Foe_Card extends Cards {
 	protected int Strength;
 	protected int Quest_Strength;
 

@@ -1,6 +1,6 @@
 package com.team25.Cards;
 
-public class Event_Card extends Story_Cards {
+public class Event_Card extends Cards {
 	protected int number;
 	
 	public Event_Card(String Name, String Picture, int number) {

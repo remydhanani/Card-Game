@@ -1,6 +1,6 @@
 package com.team25.Cards;
 
-public class Tournament_Card extends Story_Cards {
+public class Tournament_Card extends Cards {
 	protected final int Bonus_Sheilds;
 	public Tournament_Card(String Name, String Picture, int Bonus_Sheilds) {
 		this.Type = "Tournament";

@@ -226,6 +226,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		playerCards[0][11].setBounds(1419, 743, 130, 180);
 		frame.getContentPane().add(playerCards[0][11]);
 		
+		
 		playerCards[1][0] = new JButton("Story cards");
 		playerCards[1][0].setBounds(155, 6, 130, 180);
 		frame.getContentPane().add(playerCards[1][0]);
@@ -246,9 +247,11 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		playerCards[1][4].setBounds(663, 6, 130, 180);
 		frame.getContentPane().add(playerCards[1][4]);
 		
-		playerCards[1][5] = new JButton("Story cards");
-		playerCards[1][5].setBounds(793, 6, 130, 180);
-		frame.getContentPane().add(playerCards[1][5]);
+		//playerCards[1][4]
+		
+		JButton button_19 = new JButton("Story cards");
+		button_19.setBounds(793, 6, 130, 180);
+		frame.getContentPane().add(button_19);
 		
 		JButton button_20 = new JButton("Story cards");
 		button_20.setBounds(924, 6, 130, 180);

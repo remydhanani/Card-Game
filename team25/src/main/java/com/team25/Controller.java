@@ -11,6 +11,7 @@ public class Controller{
 	StoryDeck Story;
 	AdventureDeck Advent;
 	Player CurrentPlayer;
+	private IViewCallback viewHandler;
 	
 /*
  * Shuffle Decks
@@ -133,4 +134,42 @@ public class Controller{
 		//if tie; start new tournament where second attemp is true
 		//if tie again both win the players.size + bonus Sheild
 	}
+
+	/*
+	 * Callback handler to control view
+	 */
+	public void setViewHandler(IViewCallback viewHandler) {
+		this.viewHandler = viewHandler;
+	}
+
+	public void doneClicked() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Player getCurrentPlayer() {
+		return CurrentPlayer;
+	}
+	
+	/*
+	 * If card of current player is invoked this method will be called.
+	 */
+	public void playerCardSelected(Cards selectedCard, int cardNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void otherPlayerCardSelected() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addShieldBtnClick(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
 }

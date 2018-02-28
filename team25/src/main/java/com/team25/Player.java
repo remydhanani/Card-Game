@@ -12,7 +12,10 @@ public class Player {
 	private ArrayList<Cards> Hand = new ArrayList<Cards>();
 	private String Rank;
 	private int Shields;
+	private int playerId;
 	boolean isTurn;
+	private boolean isBot;
+	private String name;
 	private int freeBids;
 	
 	public String getRank() {return Rank;}	
@@ -31,6 +34,30 @@ public class Player {
 	public void addCard(Cards card) {Hand.add(card);};	
 	public void discard(Cards card) {}
 	public int HandSize() {return Hand.size();}
+	
+	public boolean isBot() {
+		return isBot;
+	}
+	public void setBot(boolean isBot) {
+		this.isBot = isBot;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getPlayerId() {
+		return playerId;
+	}
+	public void setPlayerId(int playerId) {
+		this.playerId = playerId;
+	}
+	public ArrayList<Cards> getHand() {
+		return Hand;
+	}
+	
+	
 
 	
 }

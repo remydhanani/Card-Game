@@ -3,9 +3,14 @@ package com.team25;
 import java.awt.Color;
 
 import java.awt.image.*;
-
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Frame;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,20 +18,35 @@ import javax.swing.JOptionPane;
 
 import java.awt.BorderLayout;
 
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Button;
 
 import java.awt.Image;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
+
+import org.omg.CORBA.NameValuePair;
+
 import java.awt.Panel;
 
-public class View {
+public class View implements ActionListener {
 
 		JFrame frame;
 		private int players=2;
+		private JLabel lblNewLabel_1;
+		private ArrayList<JRadioButton> radioButton1s;
+		private ArrayList<JRadioButton> radioButton2s;
+		private ArrayList<JTextField> fields;
+		private JFrame nameInputFrame;
 
 		/**
 		 * Launch the application.
@@ -37,6 +57,8 @@ public class View {
 					try {
 						View window = new View();
 						window.frame.setVisible(true);
+						window.frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+						window.frame.getContentPane().add(new JLabel(new ImageIcon("/Cards/background.jpg")));
 							
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -59,7 +81,7 @@ public class View {
 			
 			frame = new JFrame();
 			frame.getContentPane().setBackground(new Color(0, 128, 0));
-			frame.setBounds(1500, 800, 1500, 800);
+			//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			
 			
 			Button button = new Button("EXIT");
@@ -86,7 +108,7 @@ public class View {
 					if(playerStr.matches("[0-9]+")) {
 						players = Integer.parseInt(playerStr);
 						if(players <=4 && players>=2) {
-							AppWindow newapp = new AppWindow(players);
+							inputPlayerNames(players);
 							
 						}else {
 							JOptionPane.showMessageDialog(frame, "Players should be between 2 and 4", "Dialog", JOptionPane.ERROR_MESSAGE);
@@ -99,17 +121,62 @@ public class View {
 			frame.getContentPane().add(btnPlay);
 		
 			
-			JLabel lblNewLabel_1 = new JLabel("");
-			lblNewLabel_1.setBounds(0, 0, 1500, 800);
-			frame.getContentPane().add(lblNewLabel_1);
-			frame.setBounds(1500, 800, 1500, 800);
+			// lblNewLabel_1 = new JLabel("");
+			//frame.getContentPane().add(lblNewLabel_1);
+			//frame.setBounds(1500, 800, 1500, 800);
 			//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
-	Image img = new ImageIcon(this.getClass().getResource("/Cards/start-1.png")).getImage();
+	//Image img = new ImageIcon(this.getClass().getResource("/Cards/background.jpg")).getImage();
 			
-			lblNewLabel_1.setIcon(new ImageIcon(img));
+			//lblNewLabel_1.setIcon(new ImageIcon(img));
 			
 			
+		}
+
+		protected void inputPlayerNames(int playerCount) {
+			nameInputFrame = new JFrame("Enter Name");
+			GridLayout inputLayout = new GridLayout(playerCount+1,3);
+			nameInputFrame.getContentPane().setLayout(inputLayout);
+			fields = new ArrayList();
+			radioButton1s = new ArrayList();
+			radioButton2s = new ArrayList();
+			for(int i=1;i<=playerCount;i++) {
+				nameInputFrame.getContentPane().add(new JLabel("Player "+i+" Name: "));
+				JTextField temp = new JTextField();
+				fields.add(temp);
+				nameInputFrame.getContentPane().add(temp);
+				ButtonGroup grp = new ButtonGroup();
+				JRadioButton temp1 = new JRadioButton("is AI");
+				grp.add(temp1);
+				radioButton1s.add(temp1);
+				JRadioButton temp2 = new JRadioButton("is Player");
+				grp.add(temp2);
+				radioButton2s.add(temp2);
+				nameInputFrame.getContentPane().add(temp1);
+				nameInputFrame.getContentPane().add(temp2);
+			}
+			JButton submit = new JButton("Submit");
+			submit.addActionListener(this);
+			nameInputFrame.getContentPane().add(submit);
+			nameInputFrame.setSize(400, 300);
+			nameInputFrame.setVisible(true);
+		}
+
+		public void actionPerformed(ActionEvent arg0) {
+			Map<String, Boolean> name = new LinkedHashMap();
+			boolean valid = true;
+			for(int i=0;valid && i<players;i++) {
+				if(fields.get(i).getText().length()>0 && (radioButton1s.get(i).isSelected() || radioButton2s.get(i).isSelected()))
+					name.put(fields.get(i).getText(), radioButton1s.get(i).isSelected());
+				else valid = false;
+			}
+			
+			if(valid) {
+				nameInputFrame.setVisible(false);
+				AppWindow newapp = new AppWindow(players, name);
+			}else {
+				JOptionPane.showMessageDialog(frame, "Fill all the information", "Dialog", JOptionPane.ERROR_MESSAGE);
+			}
 		}
 	}
 

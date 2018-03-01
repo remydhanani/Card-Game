@@ -176,6 +176,8 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		
 		setupLabelNames();
 		
+		
+		
 		JButton button_1 = new JButton("Story cards");
 		button_1.setBounds(0, 6, 130, 180);
 		frame.getContentPane().add(button_1);
@@ -361,20 +363,13 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		button_45.setBounds(1117, 490, 130, 180);
 		frame.getContentPane().add(button_45);
 		
-		playerCards[0][11] = new JButton("Story cards");
-		playerCards[0][11].setBounds(1288, 490, 130, 180);
-		frame.getContentPane().add(playerCards[0][11]);
+		JButton button_46 = new JButton("Story cards");
+		button_46.setBounds(1288, 490, 130, 180);
+		frame.getContentPane().add(button_46);
 		
-		playerCards[0][11] = new JButton("Story cards");
-		playerCards[0][11].setBounds(1419, 490, 130, 180);
-		frame.getContentPane().add(playerCards[0][11]);
-		
-		
-		
-		
-		
-		
-		
+		JButton button_47 = new JButton("Story cards");
+		button_47.setBounds(1419, 490, 130, 180);
+		frame.getContentPane().add(button_47);
 		
 		
 		JButton btnDoneTurn = new JButton("Done Turn");
@@ -474,6 +469,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 				controller.doneClicked();
 			}
 		});
+		
 		
 		//JLabel lblNewLabel_1 = new JLabel("New label");
 		//lblNewLabel_1.setBounds(0, 0, 1500, 800);

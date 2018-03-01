@@ -176,106 +176,106 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		
 		setupLabelNames();
 		
-		playerCards[0][0] = new JButton("Story cards");
-		playerCards[0][0].setBounds(26, 6, 130, 180);
-		frame.getContentPane().add(playerCards[0][0]);
-		playerCards[0][0].addActionListener(this);
+		JButton button_1 = new JButton("Story cards");
+		button_1.setBounds(0, 6, 130, 180);
+		frame.getContentPane().add(button_1);
+		button_1.addActionListener(this);
 		
-		playerCards[0][1] = new JButton("Story cards");
-		playerCards[0][1].setBounds(135, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][1]);
+		JButton button_2 = new JButton("Story cards");
+		button_2.setBounds(135, 743, 130, 180);
+		frame.getContentPane().add(button_2);
 		
-		playerCards[0][2] = new JButton("Story cards");
-		playerCards[0][2].setBounds(266, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][2]);
+		JButton button_3 = new JButton("Story cards");
+		button_3.setBounds(266, 743, 130, 180);
+		frame.getContentPane().add(button_3);
 		
-		playerCards[0][3] = new JButton("Story cards");
-		playerCards[0][3].setBounds(393, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][3]);
+		JButton button_4 = new JButton("Story cards");
+		button_4.setBounds(393, 743, 130, 180);
+		frame.getContentPane().add(button_4);
 		
-		playerCards[0][4] = new JButton("Story cards");
-		playerCards[0][4].setBounds(521, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][4]);
+		JButton button_5 = new JButton("Story cards");
+		button_5.setBounds(521, 743, 130, 180);
+		frame.getContentPane().add(button_5);
 		
-		playerCards[0][5] = new JButton("Story cards");
-		playerCards[0][5].setBounds(644, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][5]);
-		
-		
-		playerCards[0][6] = new JButton("Story cards");
-		playerCards[0][6].setBounds(774, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][6]);
-		
-		playerCards[0][7] = new JButton("Story cards");
-		playerCards[0][7].setBounds(904, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][7]);
-		
-		playerCards[0][8] = new JButton("Story cards");
-		playerCards[0][8].setBounds(1035, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][8]);
-		
-		playerCards[0][9] = new JButton("Story cards");
-		playerCards[0][9].setBounds(1161, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][9]);
-		
-		playerCards[0][10] = new JButton("Story cards");
-		playerCards[0][10].setBounds(1290, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][10]);
-		
-		playerCards[0][11] = new JButton("Story cards");
-		playerCards[0][11].setBounds(1419, 743, 130, 180);
-		frame.getContentPane().add(playerCards[0][11]);
+		JButton button_6 = new JButton("Story cards");
+		button_6.setBounds(644, 743, 130, 180);
+		frame.getContentPane().add(button_6);
 		
 		
-		playerCards[1][0] = new JButton("Story cards");
-		playerCards[1][0].setBounds(155, 6, 130, 180);
-		frame.getContentPane().add(playerCards[1][0]);
+		JButton button_7 = new JButton("Story cards");
+		button_7.setBounds(774, 743, 130, 180);
+		frame.getContentPane().add(button_7);
 		
-		playerCards[1][1] = new JButton("Story cards");
-		playerCards[1][1].setBounds(282, 6, 130, 180);
-		frame.getContentPane().add(playerCards[1][1]);
+		JButton button_8 = new JButton("Story cards");
+		button_8.setBounds(904, 743, 130, 180);
+		frame.getContentPane().add(button_8);
 		
-		playerCards[1][2] = new JButton("Story cards");
-		playerCards[1][2].setBounds(410, 6, 130, 180);
-		frame.getContentPane().add(playerCards[1][2]);
+		JButton button_9 = new JButton("Story cards");
+		button_9.setBounds(1035, 743, 130, 180);
+		frame.getContentPane().add(button_9);
 		
-		playerCards[1][3] = new JButton("Story cards");
-		playerCards[1][3].setBounds(533, 6, 130, 180);
-		frame.getContentPane().add(playerCards[1][3]);
+		JButton button_10 = new JButton("Story cards");
+		button_10.setBounds(1161, 743, 130, 180);
+		frame.getContentPane().add(button_10);
 		
-		playerCards[1][4] = new JButton("Story cards");
-		playerCards[1][4].setBounds(663, 6, 130, 180);
-		frame.getContentPane().add(playerCards[1][4]);
+		JButton button_11 = new JButton("Story cards");
+		button_11.setBounds(1290, 743, 130, 180);
+		frame.getContentPane().add(button_11);
+		
+		JButton button_12 = new JButton("Story cards");
+		button_12.setBounds(1419, 743, 130, 180);
+		frame.getContentPane().add(button_12);
+		
+		
+		JButton button_13 = new JButton("Story cards");
+		button_13.setBounds(124, 6, 130, 180);
+		frame.getContentPane().add(button_13);
+		
+		JButton button_14 = new JButton("Story cards");
+		button_14.setBounds(248, 6, 130, 180);
+		frame.getContentPane().add(button_14);
+		
+		JButton button_15 = new JButton("Story cards");
+		button_15.setBounds(368, 6, 130, 180);
+		frame.getContentPane().add(button_15);
+		
+		JButton button_16 = new JButton("Story cards");
+		button_16.setBounds(492, 6, 130, 180);
+		frame.getContentPane().add(button_16);
+		
+		JButton button_17 = new JButton("Story cards");
+		button_17.setBounds(618, 6, 130, 180);
+		frame.getContentPane().add(button_17);
 		
 		//playerCards[1][4]
 		
+		JButton button_18 = new JButton("Story cards");
+		button_18.setBounds(743, 6, 130, 180);
+		frame.getContentPane().add(button_18);
+		
 		JButton button_19 = new JButton("Story cards");
-		button_19.setBounds(793, 6, 130, 180);
+		button_19.setBounds(868, 6, 130, 180);
 		frame.getContentPane().add(button_19);
 		
 		JButton button_20 = new JButton("Story cards");
-		button_20.setBounds(924, 6, 130, 180);
+		button_20.setBounds(992, 6, 130, 180);
 		frame.getContentPane().add(button_20);
 		
 		JButton button_21 = new JButton("Story cards");
-		button_21.setBounds(1050, 6, 130, 180);
+		button_21.setBounds(1117, 6, 130, 180);
 		frame.getContentPane().add(button_21);
 		
 		JButton button_22 = new JButton("Story cards");
-		button_22.setBounds(1179, 6, 130, 180);
+		button_22.setBounds(1308, 6, 130, 180);
 		frame.getContentPane().add(button_22);
 		
 		JButton button_23 = new JButton("Story cards");
-		button_23.setBounds(1308, 6, 130, 180);
+		button_23.setBounds(1439, 6, 130, 180);
 		frame.getContentPane().add(button_23);
 		
 		JButton button_24 = new JButton("Story cards");
-		button_24.setBounds(1439, 6, 130, 180);
+		button_24.setBounds(38, 223, 130, 180);
 		frame.getContentPane().add(button_24);
-		
-		JButton button_12 = new JButton("Story cards");
-		button_12.setBounds(38, 223, 130, 180);
-		frame.getContentPane().add(button_12);
 		
 		JButton button_25 = new JButton("Story cards");
 		button_25.setBounds(167, 223, 130, 180);
@@ -310,7 +310,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		frame.getContentPane().add(button_32);
 		
 		JButton button_33 = new JButton("Story cards");
-		button_33.setBounds(1191, 223, 130, 180);
+		button_33.setBounds(1216, 6, 130, 180);
 		frame.getContentPane().add(button_33);
 		
 		JButton button_34 = new JButton("Story cards");
@@ -322,43 +322,43 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		frame.getContentPane().add(button_35);
 		
 		JButton button_36 = new JButton("Story cards");
-		button_36.setBounds(6, 490, 130, 180);
+		button_36.setBounds(0, 490, 130, 180);
 		frame.getContentPane().add(button_36);
 		
 		JButton button_37 = new JButton("Story cards");
-		button_37.setBounds(135, 490, 130, 180);
+		button_37.setBounds(124, 490, 130, 180);
 		frame.getContentPane().add(button_37);
 		
 		JButton button_38 = new JButton("Story cards");
-		button_38.setBounds(262, 490, 130, 180);
+		button_38.setBounds(248, 490, 130, 180);
 		frame.getContentPane().add(button_38);
 		
 		JButton button_39 = new JButton("Story cards");
-		button_39.setBounds(390, 490, 130, 180);
+		button_39.setBounds(368, 490, 130, 180);
 		frame.getContentPane().add(button_39);
 		
 		JButton button_40 = new JButton("Story cards");
-		button_40.setBounds(513, 490, 130, 180);
+		button_40.setBounds(492, 490, 130, 180);
 		frame.getContentPane().add(button_40);
 		
 		JButton button_41 = new JButton("Story cards");
-		button_41.setBounds(643, 490, 130, 180);
+		button_41.setBounds(618, 490, 130, 180);
 		frame.getContentPane().add(button_41);
 		
 		JButton button_42 = new JButton("Story cards");
-		button_42.setBounds(773, 490, 130, 180);
+		button_42.setBounds(743, 490, 130, 180);
 		frame.getContentPane().add(button_42);
 		
 		JButton button_43 = new JButton("Story cards");
-		button_43.setBounds(904, 490, 130, 180);
+		button_43.setBounds(868, 490, 130, 180);
 		frame.getContentPane().add(button_43);
 		
 		JButton button_44 = new JButton("Story cards");
-		button_44.setBounds(1030, 490, 130, 180);
+		button_44.setBounds(992, 490, 130, 180);
 		frame.getContentPane().add(button_44);
 		
 		JButton button_45 = new JButton("Story cards");
-		button_45.setBounds(1159, 490, 130, 180);
+		button_45.setBounds(1117, 490, 130, 180);
 		frame.getContentPane().add(button_45);
 		
 		playerCards[0][11] = new JButton("Story cards");

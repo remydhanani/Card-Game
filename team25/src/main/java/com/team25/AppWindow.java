@@ -753,7 +753,7 @@ Image img = new ImageIcon(this.getClass().getResource("/Cards/Card2.jpg")).getIm
 	}
 
 
-	public static boolean askPlayer(Player player, String msg) {
+	public boolean askPlayer(Player player, String msg) {
 
 		if(JOptionPane.showOptionDialog(frame, msg, "Dialog", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null) == JOptionPane.YES_OPTION)
 			return true;

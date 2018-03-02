@@ -31,4 +31,6 @@ public interface IViewCallback {
 	 * Pass cards to show as Tournament Cards
 	 */
 	void setTournamentCards(ArrayList<Cards> cards);
+	
+	boolean askPlayer(Player player, String msg); 
 }

@@ -34,9 +34,9 @@ public class AppWindow implements IViewCallback, ActionListener {
 	private int TOTAL_PLAYER_CARDS = 12;
 	//private JButton playerCards[3][0];
 	private JButton button_2;
-	//private JButton playerCards[3][2];
-	//private JButton playerCards[3][3];
-	//private JButton playerCards[3][4];
+	private JButton button_1;
+	private JButton button_3;
+	private JButton button_4;
 	private JButton player4RankCard;
 	private JButton player3RankCard;
 	private JButton player2RankCard;
@@ -52,6 +52,7 @@ public class AppWindow implements IViewCallback, ActionListener {
 	private JButton button_49;
 	private JButton btnTournamentCards_2;
 	private JButton btnTournamentCards_3;
+	private JButton button_5;
 	
 	/**
 	 * Launch the application.
@@ -390,41 +391,52 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		btnAddShield.setBounds(590, 273, 117, 29);
 		frame.getContentPane().add(btnAddShield);
 		
-		 playerCards[3][0] = new JButton("Stage card 1");
-		playerCards[3][0].setBounds(823, 377, 90, 140);
-		frame.getContentPane().add(playerCards[3][0]);
+		 button_1 = new JButton("Stage card 1");
+		 button_1.setBounds(823, 377, 90, 140);
+		 button_1.setVisible(false);
+		frame.getContentPane().add(button_1);
 		
-		 playerCards[3][1] = new JButton("Stage card 2");
-		playerCards[3][1].setBounds(910, 377, 90, 140);
-		frame.getContentPane().add(playerCards[3][1]);
+		button_2 = new JButton("Stage card 2");
+		button_2.setBounds(910, 377, 90, 140);
+		button_2.setVisible(false);
+		frame.getContentPane().add(button_2);
 	
 		
-		 playerCards[3][2] = new JButton("Stage card 3");
-			playerCards[3][2].setBounds(997, 377, 90, 140);
-			frame.getContentPane().add(playerCards[3][2]);
+		button_3 = new JButton("Stage card 3");
+		button_3.setBounds(997, 377, 90, 140);
+		button_3.setVisible(false);
+			frame.getContentPane().add(button_3);
 		
-		 playerCards[3][3] = new JButton("Stage card 4");
-		playerCards[3][3].setBounds(1084, 377, 90, 140);
-		frame.getContentPane().add(playerCards[3][3]);
+			button_4 = new JButton("Stage card 4");
+			button_4.setBounds(1084, 377, 90, 140);
+			button_4.setVisible(false);
+		frame.getContentPane().add(button_4);
 		
-		 playerCards[3][4] = new JButton("Stage card 5");
-		playerCards[3][4].setBounds(1169, 377, 90, 140);
-		frame.getContentPane().add(playerCards[3][4]);
+		button_5 = new JButton("Stage card 5");
+		button_5.setBounds(1169, 377, 90, 140);
+		button_5.setVisible(false);
+		frame.getContentPane().add(button_5);
+		
+		Image rankCardImg = new ImageIcon(this.getClass().getResource("/Cards/Ranks_Squire.png")).getImage();
 		
 		player1RankCard = new JButton("Player1 Rank");
 		player1RankCard.setBounds(1150, 656, 107, 129);
+		player1RankCard.setIcon(new ImageIcon(rankCardImg));
 		frame.getContentPane().add(player1RankCard);
 		
 		 player2RankCard = new JButton("Player2 Rank");
-		player2RankCard.setBounds(175, 158, 107, 129);
+		player2RankCard.setBounds(187, 158, 107, 129);
+		player2RankCard.setIcon(new ImageIcon(rankCardImg));
 		frame.getContentPane().add(player2RankCard);
 		
 		 player3RankCard = new JButton("Player3 Rank");
 		player3RankCard.setBounds(982, 158, 107, 129);
+		player3RankCard.setIcon(new ImageIcon(rankCardImg));
 		frame.getContentPane().add(player3RankCard);
 		
 		 player4RankCard = new JButton("Player4 Rank");
 		player4RankCard.setBounds(1338, 656, 107, 129);
+		player4RankCard.setIcon(new ImageIcon(rankCardImg));
 		frame.getContentPane().add(player4RankCard);
 		
 		 lblStage = new JLabel("Stage 1");
@@ -463,7 +475,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnTournamentCards_1.setBounds(205, 348, 130, 180);
+		btnTournamentCards_1.setBounds(360, 357, 130, 180);
 		btnTournamentCards_1.setVisible(false);
 		frame.getContentPane().add(btnTournamentCards_1);
 		
@@ -473,7 +485,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnTournamentCards.setBounds(350, 348, 130, 180);
+		btnTournamentCards.setBounds(215, 357, 130, 180);
 		frame.getContentPane().add(btnTournamentCards);
 		/*
 		 playerCards[2][13] = new JButton("ADV 21");
@@ -580,7 +592,13 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		//Image img3 = new ImageIcon(this.getClass().getResource("/Cards/background.jpg")).getImage();
 		//blNewLabel_1.setIcon(new ImageIcon(img3));
 
-		
+		for(int iTemp =0;iTemp<4 ;iTemp++) {
+			for(int j =0;j<TOTAL_PLAYER_CARDS;j++) {
+				Image img1 = new ImageIcon(this.getClass().getResource("/Cards/download.jpeg")).getImage();
+				playerCards[iTemp][j].setIcon(new ImageIcon(img1));
+				playerCards[iTemp][j].setVisible(true);
+			}
+		}
 		
 	}
 
@@ -615,7 +633,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 			if(i >= player.getHand().size()) {
 				playerCards[player.getPlayerId()][i].setVisible(false);
 			}else {
-				Image img = new ImageIcon(this.getClass().getResource("Cards/download.jpeg")).getImage();
+				Image img = new ImageIcon(this.getClass().getResource("/Cards/download.jpeg")).getImage();
 				playerCards[player.getPlayerId()][i].setIcon(new ImageIcon(img));
 				playerCards[player.getPlayerId()][i].setVisible(true);
 			}
@@ -644,7 +662,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		
 		if(number>=1) {
 			lblStage.setVisible(true);
-			playerCards[3][0].setVisible(true);
+			button_1.setVisible(true);
 		}
 		
 		if(number>=2) {
@@ -654,17 +672,17 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		
 		if(number>=3) {
 			lblStage_2.setVisible(true);
-			playerCards[3][2].setVisible(true);
+			button_3.setVisible(true);
 		}
 		
 		if(number>=4) {
 			lblStage_3.setVisible(true);
-			playerCards[3][3].setVisible(true);
+			button_4.setVisible(true);
 		}
 		
 		if(number>=5) {
 			lblStage_4.setVisible(true);
-			playerCards[3][4].setVisible(true);
+			button_5.setVisible(true);
 		}
 	}
 
@@ -713,6 +731,12 @@ lblNewLabel.setIcon(new ImageIcon(img));
 			btnTournamentCards_3.setIcon(new ImageIcon(img));
 			btnTournamentCards_3.setVisible(true);
 		}
+	}
+
+	public boolean askPlayer(Player player, String msg) {
+		if(JOptionPane.showOptionDialog(frame, msg, "Dialog", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null) == JOptionPane.YES_OPTION)
+			return true;
+		return false;
 	}
 }
 		

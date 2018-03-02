@@ -161,12 +161,11 @@ public class Controller{
 
 	public void otherPlayerCardSelected() {
 		// TODO Auto-generated method stub
-		
+	
 	}
 
 	public void addShieldBtnClick(Player player) {
 		// TODO Auto-generated method stub
-		
 	}
 	
 	

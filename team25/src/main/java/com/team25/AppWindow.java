@@ -24,7 +24,7 @@ import java.awt.Window;
 
 public class AppWindow implements IViewCallback, ActionListener {
 
-	private JFrame frame;
+	private static JFrame frame;
 	private int totalPlayers;
 	private ArrayList<Player> players = new ArrayList();
 	private Map<String, Boolean> playerNames;
@@ -391,7 +391,7 @@ Image img = new ImageIcon(this.getClass().getResource("/Cards/Card2.jpg")).getIm
 		button_3.setBounds(997, 377, 90, 140);
 		button_3.setVisible(false);
 			frame.getContentPane().add(button_3);
-		
+	
 			button_4 = new JButton("Stage card 4");
 			button_4.setBounds(1084, 377, 90, 140);
 			button_4.setVisible(false);
@@ -410,6 +410,7 @@ Image img = new ImageIcon(this.getClass().getResource("/Cards/Card2.jpg")).getIm
 			}
 		});
 		player1RankCard.setBounds(997, 656, 107, 129);
+
 		player1RankCard.setIcon(new ImageIcon(rankCardImg));
 		frame.getContentPane().add(player1RankCard);
 		
@@ -745,7 +746,9 @@ Image img = new ImageIcon(this.getClass().getResource("/Cards/Card2.jpg")).getIm
 		}
 	}
 
-	public boolean askPlayer(Player player, String msg) {
+
+	public static boolean askPlayer(Player player, String msg) {
+
 		if(JOptionPane.showOptionDialog(frame, msg, "Dialog", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null) == JOptionPane.YES_OPTION)
 			return true;
 		return false;

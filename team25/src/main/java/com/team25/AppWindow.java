@@ -97,7 +97,6 @@ public class AppWindow implements IViewCallback, ActionListener {
 		frame.getMaximumSize();
 		frame.setBounds(0, 0, 2000, 1000);
 		JOptionPane.showMessageDialog(frame, "All players are Squire", "Dialog", JOptionPane.INFORMATION_MESSAGE);
-		//JOptionPane.showMessageDialog(frame, "Click on Adventure Deck to deal", "Dialog", JOptionPane.INFORMATION_MESSAGE);
 		//adventureDeck.create();
 		//adventureDeck.shuffle();
 		
@@ -119,7 +118,7 @@ public class AppWindow implements IViewCallback, ActionListener {
 		
 		controller = new Controller();
 		controller.setViewHandler(this);
-		//controller.SetUpGame(players);
+	//	controller.SetUpGame(players);
 		
 		frame = new JFrame();
 		frame.setBackground(Color.WHITE);

@@ -53,6 +53,10 @@ public class AppWindow implements IViewCallback, ActionListener {
 	private JButton btnTournamentCards_2;
 	private JButton btnTournamentCards_3;
 	private JButton button_5;
+	private JLabel lblPlayer_1;
+	private JLabel lblPlayer_2;
+	private JLabel lblPlayer_3;
+	private JLabel lblPlayer;
 	
 	/**
 	 * Launch the application.
@@ -496,6 +500,29 @@ Image img = new ImageIcon(this.getClass().getResource("/Cards/Card2.jpg")).getIm
 		  playerCards[0][11] = new JButton("ADV 21");
 		 playerCards[0][11].setBounds(1018, 779, 80, 120);
 		frame.getContentPane().add( playerCards[0][11]);
+		
+		lblPlayer = new JLabel("Player 1");
+		lblPlayer.setForeground(Color.YELLOW);
+		lblPlayer.setBounds(908, 711, 61, 16);
+		frame.getContentPane().add(lblPlayer);
+		
+		JLabel lblPlayer_2 = new JLabel("Player 2");
+		lblPlayer_2.setForeground(Color.YELLOW);
+		lblPlayer_2.setBounds(197, 301, 61, 16);
+		frame.getContentPane().add(lblPlayer_2);
+		
+		JLabel lblPlayer_3 = new JLabel("Player 3");
+		lblPlayer_3.setForeground(Color.YELLOW);
+		lblPlayer_3.setBounds(898, 213, 61, 16);
+		frame.getContentPane().add(lblPlayer_3);
+		
+		
+		JLabel lblPlayer_4 = new JLabel("Player 4");
+		lblPlayer_4.setForeground(Color.YELLOW);
+		lblPlayer_4.setBounds(1290, 656, 107, 129);
+		frame.getContentPane().add(lblPlayer_4);
+		
+		
 		
 		/*
 		playerCards[2][14] = new JButton("ADV 21");

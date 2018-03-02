@@ -149,11 +149,11 @@ public class View implements ActionListener {
 				JRadioButton temp1 = new JRadioButton("is AI");
 				grp.add(temp1);
 				radioButton1s.add(temp1);
-				JRadioButton temp2 = new JRadioButton("is Player");
-				grp.add(temp2);
-				radioButton2s.add(temp2);
+				//JRadioButton temp2 = new JRadioButton("is Player");
+				//grp.add(temp2);
+				//radioButton2s.add(temp2);
 				nameInputFrame.getContentPane().add(temp1);
-				nameInputFrame.getContentPane().add(temp2);
+				//nameInputFrame.getContentPane().add(temp2);
 			}
 			JButton submit = new JButton("Submit");
 			submit.addActionListener(this);
@@ -166,11 +166,11 @@ public class View implements ActionListener {
 			Map<String, Boolean> name = new LinkedHashMap();
 			boolean valid = true;
 			for(int i=0;valid && i<players;i++) {
-				if(fields.get(i).getText().length()>0 && (radioButton1s.get(i).isSelected() || radioButton2s.get(i).isSelected()))
+				if(fields.get(i).getText().length()>0)
 					name.put(fields.get(i).getText(), radioButton1s.get(i).isSelected());
 				else valid = false;
 			}
-			
+			//&& (radioButton1s.get(i).isSelected() || radioButton2s.get(i).isSelected()))
 			if(valid) {
 				nameInputFrame.setVisible(false);
 				AppWindow newapp = new AppWindow(players, name);

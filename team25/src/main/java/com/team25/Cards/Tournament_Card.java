@@ -1,16 +1,16 @@
 package com.team25.Cards;
 
 public class Tournament_Card extends Cards {
-	protected final int Bonus_Sheilds;
-	public Tournament_Card(String Name, String Picture, int Bonus_Sheilds) {
+	protected final int Bonus_Shields;
+	public Tournament_Card(String Name, String Picture, int Bonus_Shields) {
 		this.Type = "Tournament";
 		this.Name = Name;
 		this.Picture = Picture;
-		this.Bonus_Sheilds = Bonus_Sheilds;
+		this.Bonus_Shields = Bonus_Shields;
 		}
 	
-	public int getBonus_Sheilds() {
-		return Bonus_Sheilds;
+	public int getBonus_Shields() {
+		return Bonus_Shields;
 	}
 	
 

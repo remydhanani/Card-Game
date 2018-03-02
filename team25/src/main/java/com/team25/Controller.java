@@ -11,8 +11,10 @@ public class Controller{
 	StoryDeck Story;
 	AdventureDeck Advent;
 	Player CurrentPlayer;
+	Cards ObjectiveCard;
 	private IViewCallback viewHandler;
-	
+	public static boolean gCard = true;
+	ArrayList<Cards> iCard = null;
 /*
  * Shuffle Decks
  * Show Squire Cards
@@ -56,6 +58,7 @@ public class Controller{
  * if rank is equal to Knight of the round table (pay 10 shields)
  * 	if this happens to multiple ppl they play a tournament and winner wins the game if tied twice they both win the game
  * */
+ 
 	
 	public void SetUpGame(ArrayList<Player> Players) {
 		Story = new StoryDeck();
@@ -101,7 +104,7 @@ public class Controller{
 	
 	public void StartGame() {
 		while (!GameOver) {
-			Cards ObjectiveCard = TopDeck();
+			ObjectiveCard = TopDeck();
 			if (ObjectiveCard.getType() == "Quest") {
 
 			} else if (ObjectiveCard.getType() == "Tournament") {
@@ -119,21 +122,62 @@ public class Controller{
 		System.out.println("Congratulations For Winning"+ Winners.toString());
 	}
 
-	private void StartTournament(boolean secondAttemp) {
-		//start loop
+	private void StartTournament(boolean secondAttempt) {
+		//start loop x
 		//Ask Player if they want to play
 		//Rotate player screen
 		//end Loop
+		//each tournament player draws a card Currentplayer.addcard(advent.deal)
 		//if only one person award 1+bonus shields
 		//start loop
 		//ask players playing to click cards he wants to use
-	//	remove cards from hand
+		//remove cards from hand
 		//end loop
 		//compare players bp points
-		// Highest wins players.size + bonus Sheild
-		//if tie; start new tournament where second attemp is true
-		//if tie again both win the players.size + bonus Sheild
+		// Highest wins players.size + bonus Shield
+		//if tie; start new tournament where second attempt is true
+		//if tie again both win the players.size + bonus Shield
+		
+		ArrayList<Player> tournamentPlayers = new ArrayList<Player>();
+		
+		//ask player if they want to play
+		for(int i = 0; i < Players.size(); i++) {
+			//Ask_Player(CurrentPlayer);
+			//rotate player screen	
+		}
+		
+		//each player draws a tournament card
+		for(int i = 0; i < tournamentPlayers.size(); i++) {
+			//deal to each player
+			tournamentPlayers.get(i).addCard(Advent.draw());
+		}
+		
+		//Player.add(CurrentPlayer);
+		
+		//if only 1 person, award 1+ bonus shields
+		if(tournamentPlayers.size() == 1) {
+			tournamentPlayers.get(0).addShields(1 + ((Tournament_Card)ObjectiveCard).getBonus_Shields()); //getBonus_Shields?
+		}
+		
+		//ask players playing to click cards he wants to use
+		//discard cards that have been played
+		for(int i = 0; i < tournamentPlayers.size(); i++) {
+			//Played = view.SelectCards(CurrentPlayer);\
+			//add each clicked card to specific player's total battle points
+			//tournamentPlayers.get(i).discard();
+			
+		}
+		
+		//compare bp points
+		for(int i = 0; i < tournamentPlayers.size(); i++) {
+			//compare bp points between each Tournament player
+			// Highest wins players.size + bonus Shield
+			//if tie; start new tournament where second attempt is true
+			//if tie again both win the players.size + bonus Shield
+		}
+
 	}
+	
 
 	/*
 	 * Callback handler to control view
@@ -157,7 +201,27 @@ public class Controller{
 	public void playerCardSelected(Cards selectedCard, int cardNumber) {
 		// TODO Auto-generated method stub
 		
+		gCard = false;
+		iCard.add(selectedCard);
+		
 	}
+		
+	public ArrayList<Cards> SelectCards(){
+			while (gCard = true) {
+				if (iCard!= null) {
+					//copy it
+					ArrayList<Cards> tempCard = iCard;
+					iCard.clear();
+				
+						gCard = true;
+					return tempCard;
+				}
+			}
+			return null;
+		}
+		
+		
+		
 
 	public void otherPlayerCardSelected() {
 		// TODO Auto-generated method stub

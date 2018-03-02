@@ -101,7 +101,7 @@ public class StoryDeck extends Deck {
 		Event_Card King_Call_Arm = new Event_Card("Prosperity throughout the Realm", "/team25/Resources/Cards/Events_KingsCallToArms.png", 7);
 		//ArrayList<Cards> Court_Called_List = addMultiCards(Court_Called , 2);
 		Deck.add(King_Call_Arm);
-		
+		//System.out.println(Deck.toString());
 		shuffle();
 		
 	}

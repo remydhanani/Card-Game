@@ -32,5 +32,5 @@ public interface IViewCallback {
 	 */
 	void setTournamentCards(ArrayList<Cards> cards);
 	
-	boolean askPlayer(Player player, String msg); 
+	//boolean askPlayer(Player player, String msg); 
 }

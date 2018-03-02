@@ -58,7 +58,13 @@ public class Controller{
  * if rank is equal to Knight of the round table (pay 10 shields)
  * 	if this happens to multiple ppl they play a tournament and winner wins the game if tied twice they both win the game
  * */
- 
+	public static void main(String[] args) {
+		View.run();
+		AppWindow.Jank();
+		//SetUpGame();
+		
+	}
+	
 	
 	public void SetUpGame(ArrayList<Player> Players) {
 		Story = new StoryDeck();
@@ -135,7 +141,7 @@ public class Controller{
 		if(AppWindow.askPlayer(CurrentPlayer, "Would u like to Sponsor This Quest?")) {
 			for(int j = 0; j<((Quest_Card) ObjectiveCard).getNum_Stages();j++) {//setting up stages loop
 				AppWindow.askPlayer(CurrentPlayer, "Select Cards for the next Stage");
-				SponsorPlayed = AppWindow.SelectedCards();
+				SponsorPlayed = SelectCards();
 				for(int k = 0;k < SponsorPlayed.size();k++) {
 				Stages.get(k).add(SponsorPlayed.get(k));	
 				SponsorPlayedT.add(SponsorPlayed.get(k));
@@ -156,7 +162,7 @@ public class Controller{
 				
 			if(Stages.get(stageNum).get(0).getType() == "Foe") {
 				for(int k = 0; k < Questers.size();k++) // cycle quester				
-					PlayerPlayed.add(AppWindow.SelectCards());	
+					PlayerPlayed.addAll(SelectCards());	
 				
 				
 				//show foe and his weapons
@@ -188,7 +194,7 @@ public class Controller{
 				if(AppWindow.askPlayer(Questers.get(j), "Would u like to bid to pass the test?")) {
 					Questers.add(Players.get(i));
 					while(true) {
-					PlayerPlayed = SelectCards(CurrentPlayer);
+					PlayerPlayed = SelectCards();
 					if(PlayerPlayed.size() + Questers.get(j).getfreeBids()>HighestBid) {//minimum bid check needed
 						Highest_Player = Questers.get(j);
 						HighestBid = PlayerPlayed.size()+Questers.get(j).getfreeBids();
@@ -331,7 +337,7 @@ public class Controller{
 	}
 
 	public void addShieldBtnClick(Player player) {
-		// TODO Auto-generated method stub
+		player.addShields(5);
 	}
 	
 	

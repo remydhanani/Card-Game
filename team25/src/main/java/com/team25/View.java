@@ -51,9 +51,9 @@ public class View implements ActionListener {
 		/**
 		 * Launch the application.
 		 */
-		public static void main(String[] args) {
-			EventQueue.invokeLater(new Runnable() {
-				public void run() {
+		//public static void main(String[] args) {
+			//EventQueue.invokeLater(new Runnable() {
+				public static void run() {
 					try {
 						View window = new View();
 						window.frame.setVisible(true);
@@ -64,8 +64,8 @@ public class View implements ActionListener {
 						e.printStackTrace();
 					}
 				}
-			});
-		}
+			//});
+		//}
 
 		/**
 		 * Create the application.

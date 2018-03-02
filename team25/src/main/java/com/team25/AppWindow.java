@@ -26,7 +26,7 @@ public class AppWindow implements IViewCallback, ActionListener {
 
 	private static JFrame frame;
 	private int totalPlayers;
-	private ArrayList<Player> players = new ArrayList();
+	private static ArrayList<Player> players = new ArrayList();
 	private Map<String, Boolean> playerNames;
 	private Controller controller;
 	private JLabel[] playerLbl;
@@ -102,11 +102,17 @@ public class AppWindow implements IViewCallback, ActionListener {
 		
 	}
 
+	
+	public static ArrayList<Player> Jank(){
+		
+		return players;
+		
+	}
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		players = new ArrayList();
+		players = new ArrayList<Player>();
 		int i = 0;
 		for(Map.Entry<String,Boolean> entry : playerNames.entrySet()) {
 			Player player = new Player();
@@ -116,9 +122,9 @@ public class AppWindow implements IViewCallback, ActionListener {
 			players.add(player);
 		}
 		
-		controller = new Controller();
-		controller.setViewHandler(this);
-	//	controller.SetUpGame(players);
+	//controller = new Controller();
+		//controller.setViewHandler(this);
+		//controller.SetUpGame(players);
 		
 		frame = new JFrame();
 		frame.setBackground(Color.WHITE);

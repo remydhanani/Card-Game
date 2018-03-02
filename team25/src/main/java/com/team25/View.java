@@ -119,16 +119,6 @@ public class View implements ActionListener {
 			
 			frame.getContentPane().setLayout(null);
 			frame.getContentPane().add(btnPlay);
-		
-			
-			// lblNewLabel_1 = new JLabel("");
-			//frame.getContentPane().add(lblNewLabel_1);
-			//frame.setBounds(1500, 800, 1500, 800);
-			//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			
-	//Image img = new ImageIcon(this.getClass().getResource("/Cards/background.jpg")).getImage();
-			
-			//lblNewLabel_1.setIcon(new ImageIcon(img));
 			
 			
 		}
@@ -149,11 +139,8 @@ public class View implements ActionListener {
 				JRadioButton temp1 = new JRadioButton("is AI");
 				grp.add(temp1);
 				radioButton1s.add(temp1);
-				JRadioButton temp2 = new JRadioButton("is Player");
-				grp.add(temp2);
-				radioButton2s.add(temp2);
 				nameInputFrame.getContentPane().add(temp1);
-				nameInputFrame.getContentPane().add(temp2);
+				
 			}
 			JButton submit = new JButton("Submit");
 			submit.addActionListener(this);
@@ -166,7 +153,7 @@ public class View implements ActionListener {
 			Map<String, Boolean> name = new LinkedHashMap();
 			boolean valid = true;
 			for(int i=0;valid && i<players;i++) {
-				if(fields.get(i).getText().length()>0 && (radioButton1s.get(i).isSelected() || radioButton2s.get(i).isSelected()))
+				if(fields.get(i).getText().length()>0)
 					name.put(fields.get(i).getText(), radioButton1s.get(i).isSelected());
 				else valid = false;
 			}

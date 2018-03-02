@@ -53,6 +53,10 @@ public class AppWindow implements IViewCallback, ActionListener {
 	private JButton btnTournamentCards_2;
 	private JButton btnTournamentCards_3;
 	private JButton button_5;
+	private JLabel lblPlayer_1;
+	private JLabel lblPlayer_2;
+	private JLabel lblPlayer_3;
+	private JLabel lblPlayer;
 	
 	/**
 	 * Launch the application.
@@ -93,7 +97,6 @@ public class AppWindow implements IViewCallback, ActionListener {
 		frame.getMaximumSize();
 		frame.setBounds(0, 0, 2000, 1000);
 		JOptionPane.showMessageDialog(frame, "All players are Squire", "Dialog", JOptionPane.INFORMATION_MESSAGE);
-		JOptionPane.showMessageDialog(frame, "Click on Adventure Deck to deal", "Dialog", JOptionPane.INFORMATION_MESSAGE);
 		//adventureDeck.create();
 		//adventureDeck.shuffle();
 		
@@ -115,7 +118,7 @@ public class AppWindow implements IViewCallback, ActionListener {
 		
 		controller = new Controller();
 		controller.setViewHandler(this);
-		//controller.SetUpGame(players);
+	//	controller.SetUpGame(players);
 		
 		frame = new JFrame();
 		frame.setBackground(Color.WHITE);
@@ -123,33 +126,15 @@ public class AppWindow implements IViewCallback, ActionListener {
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 frame.getContentPane().setLayout(null);
-		
-		 JLabel adventureLabel = new JLabel("Adventure Deck");
-		 adventureLabel.setBounds(517, 320, 117, 16);
-			adventureLabel.setForeground(Color.ORANGE);
-			frame.getContentPane().add(adventureLabel);
 			
 			JLabel storyLabel = new JLabel("Story Deck");
-			storyLabel.setBounds(692, 320, 117, 16);
+			storyLabel.setBounds(590, 320, 117, 16);
 			storyLabel.setForeground(Color.ORANGE);
 			frame.getContentPane().add(storyLabel);
-		
-		
-		 
-		JButton lblNewLabel = new JButton("Adventure cards");
-		lblNewLabel.setBounds(517, 348, 130, 180);
-		lblNewLabel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}		
-		});
-		
-		frame.getContentPane().add(lblNewLabel);
 Image img = new ImageIcon(this.getClass().getResource("/Cards/Card2.jpg")).getImage();
 		
-lblNewLabel.setIcon(new ImageIcon(img));
-		
 		JButton label = new JButton("Story cards");
-		label.setBounds(659, 348, 130, 180);
+		label.setBounds(590, 348, 130, 180);
 		label.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -406,7 +391,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		button_3.setBounds(997, 377, 90, 140);
 		button_3.setVisible(false);
 			frame.getContentPane().add(button_3);
-		
+	
 			button_4 = new JButton("Stage card 4");
 			button_4.setBounds(1084, 377, 90, 140);
 			button_4.setVisible(false);
@@ -420,7 +405,12 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		Image rankCardImg = new ImageIcon(this.getClass().getResource("/Cards/Ranks_Squire.png")).getImage();
 		
 		player1RankCard = new JButton("Player1 Rank");
-		player1RankCard.setBounds(1150, 656, 107, 129);
+		player1RankCard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		player1RankCard.setBounds(997, 656, 107, 129);
+
 		player1RankCard.setIcon(new ImageIcon(rankCardImg));
 		frame.getContentPane().add(player1RankCard);
 		
@@ -510,6 +500,29 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		  playerCards[0][11] = new JButton("ADV 21");
 		 playerCards[0][11].setBounds(1018, 779, 80, 120);
 		frame.getContentPane().add( playerCards[0][11]);
+		
+		lblPlayer = new JLabel("Player 1");
+		lblPlayer.setForeground(Color.YELLOW);
+		lblPlayer.setBounds(908, 711, 61, 16);
+		frame.getContentPane().add(lblPlayer);
+		
+		JLabel lblPlayer_2 = new JLabel("Player 2");
+		lblPlayer_2.setForeground(Color.YELLOW);
+		lblPlayer_2.setBounds(197, 301, 61, 16);
+		frame.getContentPane().add(lblPlayer_2);
+		
+		JLabel lblPlayer_3 = new JLabel("Player 3");
+		lblPlayer_3.setForeground(Color.YELLOW);
+		lblPlayer_3.setBounds(898, 213, 61, 16);
+		frame.getContentPane().add(lblPlayer_3);
+		
+		
+		JLabel lblPlayer_4 = new JLabel("Player 4");
+		lblPlayer_4.setForeground(Color.YELLOW);
+		lblPlayer_4.setBounds(1290, 656, 107, 129);
+		frame.getContentPane().add(lblPlayer_4);
+		
+		
 		
 		/*
 		playerCards[2][14] = new JButton("ADV 21");
@@ -733,7 +746,9 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		}
 	}
 
+
 	public static boolean askPlayer(Player player, String msg) {
+
 		if(JOptionPane.showOptionDialog(frame, msg, "Dialog", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null) == JOptionPane.YES_OPTION)
 			return true;
 		return false;

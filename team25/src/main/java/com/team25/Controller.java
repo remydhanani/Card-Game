@@ -106,7 +106,7 @@ public class Controller{
 			if (ObjectiveCard.getType() == "Quest") {
 				StartQuest();
 			} else if (ObjectiveCard.getType() == "Tournament") {
-				StartTournament(false);
+				//StartTournament(false);
 			} else if (ObjectiveCard.getType() == "Event") {
 				//((Event_Card) ObjectiveCard).Activate_Event();
 			}
@@ -125,53 +125,79 @@ public class Controller{
 		Player Sponsor = new Player();
 		Sponsor = CurrentPlayer;
 		ArrayList<Cards> SponsorPlayed = new ArrayList<Cards>();
-		Cards[][] Stages = new Cards[((Quest_Card) ObjectiveCard).getNum_Stages()][20];
+		ArrayList<Cards> PlayerPlayed = new ArrayList<Cards>();
+		ArrayList<Cards> SponsorPlayedT = new ArrayList<Cards>();
+		ArrayList<ArrayList<Cards>> Stages = new ArrayList<ArrayList<Cards>>();
+		
 		for(int i = 0; i < Players.size();i++) {
-		if() {//Ask_Player(CurrentPlayer, "Would u like to Sponsor This Quest?");
-			Questers.add(Players.get(i));
+		if(AppWindow.askPlayer(CurrentPlayer, "Would u like to Sponsor This Quest?")) {
 			for(int j = 0; j<((Quest_Card) ObjectiveCard).getNum_Stages();j++) {//setting up stages loop
-				//Stages[][] = view.SelectCards(CurrentPlayer);	
-				SponsorPlayed().add(Stages[][]);
+				AppWindow.askPlayer(CurrentPlayer, "Select Cards for the next Stage");
+				SponsorPlayed = AppWindow.SelectedCards();
+				for(int k = 0;k < SponsorPlayed.size();k++) {
+				Stages.get(k).add(SponsorPlayed.get(k));	
+				SponsorPlayedT.add(SponsorPlayed.get(k));
+				System.out.println("Cards Added to Stage:" + SponsorPlayed.toString());
+				SponsorPlayed.clear();
+				}
 			}
+			//add players to the active questers arraylist
+			for(int k = 0; k<Players.size();k++)
+				if(AppWindow.askPlayer(Players.get(k), "Would u like to Join This Quest?"))
+					Questers.add(Players.get(k));
+			
+			//deal one card to everone
 			for(int stageNum = 0; stageNum++<((Quest_Card) ObjectiveCard).getNum_Stages();stageNum++) {//stage loop
-			for(int j = 0; j<Questers.size();j++) {//deal cards to everone
-				Questers.get(j).addCard(Advent.draw());
-			}
-			if() {//stages.getType()=="Foe"
-				for(int j = 0; i < Questers.size();i++) // cycle quester				
-					//Played = view.SelectCards(CurrentPlayer);	
+				for(int j = 0; j<Questers.size();j++) {
+					Questers.get(j).addCard(Advent.draw());
+				}
+				
+			if(Stages.get(stageNum).get(0).getType() == "Foe") {
+				for(int k = 0; k < Questers.size();k++) // cycle quester				
+					PlayerPlayed.add(AppWindow.SelectCards());	
+				
 				
 				//show foe and his weapons
 				// add up the foe bp
-				for(int j = 0; i <Player.Board.size();i++) {//Player.board())
+				int foe_bp =0;
+				for(int k = 0; k < Stages.get(stageNum).size();k++) {
+					if(Stages.get(stageNum).get(k).getType() == "Foe") {
+						foe_bp += ((Foe_Card) Stages.get(stageNum).get(k)).getStrength();
+					}else if(Stages.get(stageNum).get(k).getType() == "Weapon")
+						foe_bp += ((Weapon_Card) Stages.get(stageNum).get(k)).getPower();
+				}
+				
+			/*	for(int j = 0; i <Player.Board.size();i++) {//Player.board())
 					//if(Questers.get(j).bp<foe.bp)
 					Questers.get(j).RemoveWeapons();
+					Questers.get(j).RemoveAmours();
 					Questers.remove(j);
-				}
-				for(int j = 0; j<Questers.size();j++) //deal cards to everone
-					Questers.get(j).addCard(Advent.draw());
+				}*/
+			
+			for(int j = 0; j<Questers.size();j++) //deal cards to everone
+				Questers.get(j).addCard(Advent.draw());
 				
-			}else if() {//stages.getType()=="Test"
+			}else if(Stages.get(stageNum).get(0).getType() == "Test") {//stages.getType()=="Test"
 				Player Highest_Player = new Player();
 				int HighestBP = 0;
 				int HighestBid = 0;
 				//Show Test
 				for(int j = 0; j<Questers.size();j++) {
-				if(Ask_Player("join or drop out")) {
+				if(AppWindow.askPlayer(Questers.get(j), "Would u like to bid to pass the test?")) {
 					Questers.add(Players.get(i));
 					while(true) {
-					//Played = view.SelectCards(CurrentPlayer);
-					if(Played.size())+Questers.get(j).getfreeBids()>HighestBid) {//minimum bid check needed
+					PlayerPlayed = SelectCards(CurrentPlayer);
+					if(PlayerPlayed.size() + Questers.get(j).getfreeBids()>HighestBid) {//minimum bid check needed
 						Highest_Player = Questers.get(j);
-						HighestBid = Played.size())+Questers.get(j).getfreeBids();
+						HighestBid = PlayerPlayed.size()+Questers.get(j).getfreeBids();
 						break;
-					}else if(Played.size())+Questers.get(j).getfreeBids()<=HighestBid) {
-						AskPlayer(Questers.get(j), "Your Bid is too low try again");
+					}else if(PlayerPlayed.size()+Questers.get(j).getfreeBids()<=HighestBid) {
+						AppWindow.askPlayer(Questers.get(j), "Your Bid is too low try again");
 					}	
 					}
 					
-					for(int k = 0;k<Played.size();k++) {
-						Questers.get(j).discard(Played.get(k));
+					for(int k = 0;k<PlayerPlayed.size();k++) {
+						Questers.get(j).discard(PlayerPlayed.get(k));
 						
 					}
 				}
@@ -182,17 +208,17 @@ public class Controller{
 			}	
 			}// end of stage loop
 			
-			for(int i =0; i<Questers.size();i++)
-					Questers.get(i).addShields(Stages[][].size());
-
+			for(int j = 0; i<Questers.size();i++)
+					Questers.get(i).addShields(Stages.get(j).size()+((Quest_Card)ObjectiveCard).getNum_Stages());
+/**
 			for(int j = 0; i <Player.Board.size();i++) {
 				Questers.get(j).RemoveAmours();
-			}
+			}**/
 			for(int j = 0; j<Stages.size()+SponsorPlayed.size();j++)
 				Sponsor.addCard(Advent.draw());
 		}
 		}
-		CurrentPlayer = NextPlayer(Sponsor);
+		//CurrentPlayer = NextPlayer(Sponsor);
 	}
 	
 	private void StartTournament(boolean secondAttemp) {
@@ -237,6 +263,7 @@ public class Controller{
 
 	public void otherPlayerCardSelected() {
 		// TODO Auto-generated method stub
+		System.out.println("I hate life");
 	
 	}
 

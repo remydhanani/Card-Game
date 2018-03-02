@@ -8,9 +8,10 @@ public class Controller{
 	public boolean GameOver = false;
 	ArrayList<Player> Players;
 	ArrayList<Player> Winners;
-	StoryDeck Story;
+	static StoryDeck Story;
 	AdventureDeck Advent;
 	Player CurrentPlayer;
+	Cards ObjectiveCard;
 	private IViewCallback viewHandler;
 	
 /*
@@ -70,7 +71,7 @@ public class Controller{
 		StartGame();
 	}
 
-	public Cards TopDeck() { // Flips the top Card of the StoryDeck
+	public static Cards TopDeck() { // Flips the top Card of the StoryDeck
 		return Story.draw();
 	}
 
@@ -101,13 +102,13 @@ public class Controller{
 	
 	public void StartGame() {
 		while (!GameOver) {
-			Cards ObjectiveCard = TopDeck();
+			ObjectiveCard = TopDeck();
 			if (ObjectiveCard.getType() == "Quest") {
-
+				StartQuest();
 			} else if (ObjectiveCard.getType() == "Tournament") {
 				StartTournament(false);
 			} else if (ObjectiveCard.getType() == "Event") {
-				//ObjectiveCard.;
+				((Event_Card) ObjectiveCard).Activate_Event();
 			}
 			CheckRank();
 			//nextPlayer();
@@ -119,6 +120,51 @@ public class Controller{
 		System.out.println("Congratulations For Winning"+ Winners.toString());
 	}
 
+	protected void StartQuest() {
+		ArrayList<Player> Questers = new ArrayList<Player>();
+		Player Sponsor = new Player();
+		Sponsor = CurrentPlayer;
+		//ArrayList<Cards> Stages = new ArrayList<Cards>();
+		for(int i = 0; i < Players.size();i++) {
+		if() {//Ask_Player(CurrentPlayer, "Would u like to Sponsor This Quest?");
+			Questers.add(Players.get(i));
+			for(int j = 0; j<((Quest_Card) ObjectiveCard).getNum_Stages();j++) {//setting up stages loop
+				//Stages[][] = view.SelectCards(CurrentPlayer);	
+			}
+			for(int j = 0; j<Questers.size();j++) {//deal cards to everone
+				Questers.get(j).addCard(Advent.draw());
+			}
+			if() {//stages.getType()=="Foe"
+				for(int j = 0; i < Questers.size();i++) // cycle quester				
+					//Played = view.SelectCards(CurrentPlayer);	
+				
+				//show foe and his weapons
+				// add up the foe bp
+				for(int j = 0; i <Player.Board.size();i++) {//Player.board())
+					//if(Questers.get(j).bp<foe.bp)
+					Questers.get(j).RemoveWeapons();
+					Questers.remove(j);
+				}
+				for(int j = 0; j<Questers.size();j++) //deal cards to everone
+					Questers.get(j).addCard(Advent.draw());
+				
+			}else if() {//stages.getType()=="Test"
+				//Show Test
+				for(int j = 0; j<Questers.size();j++)
+				if(Ask_Player("join or drop out")) {
+					
+				}
+				
+			}
+
+			
+		}else {
+			//NextPlayer();
+		}
+		}
+		
+	}
+	
 	private void StartTournament(boolean secondAttemp) {
 		//start loop
 		//Ask Player if they want to play

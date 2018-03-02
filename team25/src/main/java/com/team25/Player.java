@@ -32,7 +32,7 @@ public class Player {
 	public void setfreeBids(int num) {};// takes positive or negative
 	
 	public void addCard(Cards card) {Hand.add(card);};	
-	public void discard(Cards card) {}
+	public void discard(Cards card) {Hand.remove(card);}
 	public int HandSize() {return Hand.size();}
 	
 	public boolean isBot() {

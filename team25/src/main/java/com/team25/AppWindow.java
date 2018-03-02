@@ -48,6 +48,10 @@ public class AppWindow implements IViewCallback, ActionListener {
 	private JLabel lblStage_2;
 	private JLabel lblStage_1;
 	private JLabel lblStage;
+	private JButton button_48;
+	private JButton button_49;
+	private JButton btnTournamentCards_2;
+	private JButton btnTournamentCards_3;
 	
 	/**
 	 * Launch the application.
@@ -161,7 +165,7 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		frame.getContentPane().add(button); */
 		
 		playerLbl[0] = new JLabel("Player1");
-		playerLbl[0].setBounds(26, 694, 61, 16);
+		playerLbl[0].setBounds(614, 711, 61, 16);
 		frame.getContentPane().add(playerLbl[0]);
 		
 		playerLbl[1] = new JLabel("Player3");
@@ -178,160 +182,160 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		
 		setupLabelNames();
 				
-		playerCards[3][0] = new JButton("ADV 1");
-		playerCards[3][0].setBounds(175, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][0]);
-		playerCards[3][0].addActionListener(this);
-		
-		 playerCards[3][1] = new JButton("ADV 2");
-		
-		playerCards[3][1].setBounds(247, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][1]);
-		
-		playerCards[3][2] = new JButton("ADV 3");
-		playerCards[3][2].setBounds(325, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][2]);
-		
-		playerCards[3][3] = new JButton("ADV 4");
-		playerCards[3][3].setBounds(402, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][3]);
-		
-		playerCards[3][4] = new JButton("ADV 5");
-		playerCards[3][4].setBounds(478, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][4]);
-		
-		playerCards[3][5] = new JButton("ADV 6");
-		playerCards[3][5].setBounds(554, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][5]);
-		
-		
-		 playerCards[3][6] = new JButton("ADV 7");
-		playerCards[3][6].setBounds(627, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][6]);
-		
-		playerCards[3][7] = new JButton("ADV 8");
-		playerCards[3][7].setBounds(705, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][7]);
-		
-		playerCards[3][8] = new JButton("ADV 9");
-		playerCards[3][8].setBounds(777, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][8]);
-		
-		 playerCards[3][9] = new JButton("ADV 10");
-		playerCards[3][9].setBounds(847, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][9]);
-		
-		 playerCards[3][10] = new JButton("ADV 11");
-		playerCards[3][10].setBounds(919, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][10]);
-		
-		 playerCards[3][11] = new JButton("ADV 12");
-		playerCards[3][11].setBounds(996, 6, 80, 120);
-		frame.getContentPane().add(playerCards[3][11]);
-		
-		
-		 playerCards[2][11] = new JButton("ADV 13");
-		playerCards[2][11].setBounds(0, 74, 80, 120);
-		frame.getContentPane().add(playerCards[3][12]);
-		
-
-		playerCards[2][0] = new JButton("ADV 14");
-		playerCards[2][0].setBounds(0, 186, 80, 120);
+		playerCards[2][0] = new JButton("ADV 1");
+		playerCards[2][0].setBounds(175, 6, 80, 120);
 		frame.getContentPane().add(playerCards[2][0]);
+		playerCards[2][0].addActionListener(this);
 		
-		 playerCards[2][1] = new JButton("ADV 15");
-		playerCards[2][1].setBounds(0, 298, 80, 120);
+		 playerCards[2][1] = new JButton("ADV 2");
+		
+		playerCards[2][1].setBounds(247, 6, 80, 120);
 		frame.getContentPane().add(playerCards[2][1]);
 		
-		 playerCards[2][2] = new JButton("ADV 16");
-		playerCards[2][2].setBounds(0, 408, 80, 120);
+		playerCards[2][2] = new JButton("ADV 3");
+		playerCards[2][2].setBounds(325, 6, 80, 120);
 		frame.getContentPane().add(playerCards[2][2]);
 		
-		 playerCards[2][3] = new JButton("ADV 17");
-		playerCards[2][3].setBounds(0, 510, 80, 120);
+		playerCards[2][3] = new JButton("ADV 4");
+		playerCards[2][3].setBounds(402, 6, 80, 120);
 		frame.getContentPane().add(playerCards[2][3]);
+		
+		playerCards[2][4] = new JButton("ADV 5");
+		playerCards[2][4].setBounds(478, 6, 80, 120);
+		frame.getContentPane().add(playerCards[2][4]);
+		
+		playerCards[2][5] = new JButton("ADV 6");
+		playerCards[2][5].setBounds(554, 6, 80, 120);
+		frame.getContentPane().add(playerCards[2][5]);
+		
+		
+		 playerCards[2][6] = new JButton("ADV 7");
+		playerCards[2][6].setBounds(627, 6, 80, 120);
+		frame.getContentPane().add(playerCards[2][6]);
+		
+		playerCards[2][7] = new JButton("ADV 8");
+		playerCards[2][7].setBounds(705, 6, 80, 120);
+		frame.getContentPane().add(playerCards[2][7]);
+		
+		playerCards[2][8] = new JButton("ADV 9");
+		playerCards[2][8].setBounds(777, 6, 80, 120);
+		frame.getContentPane().add(playerCards[2][8]);
+		
+		 playerCards[2][9] = new JButton("ADV 10");
+		playerCards[2][9].setBounds(847, 6, 80, 120);
+		frame.getContentPane().add(playerCards[2][9]);
+		
+		 playerCards[2][10] = new JButton("ADV 11");
+		playerCards[2][10].setBounds(919, 6, 80, 120);
+		frame.getContentPane().add(playerCards[2][10]);
+		
+		 playerCards[2][11] = new JButton("ADV 12");
+		playerCards[2][11].setBounds(996, 6, 80, 120);
+		frame.getContentPane().add(playerCards[2][11]);
+		
+		
+		 playerCards[1][11] = new JButton("ADV 13");
+		playerCards[1][11].setBounds(0, 74, 80, 120);
+		frame.getContentPane().add(playerCards[1][11]);
+		
+
+		playerCards[1][0] = new JButton("ADV 14");
+		playerCards[1][0].setBounds(0, 186, 80, 120);
+		frame.getContentPane().add(playerCards[1][0]);
+		
+		 playerCards[1][1] = new JButton("ADV 15");
+		playerCards[1][1].setBounds(0, 298, 80, 120);
+		frame.getContentPane().add(playerCards[1][1]);
+		
+		 playerCards[1][2] = new JButton("ADV 16");
+		playerCards[1][2].setBounds(0, 408, 80, 120);
+		frame.getContentPane().add(playerCards[1][2]);
+		
+		 playerCards[1][3] = new JButton("ADV 17");
+		playerCards[1][3].setBounds(0, 510, 80, 120);
+		frame.getContentPane().add(playerCards[1][3]);
 		
 		//playerCards[1][4]
 		
-	 playerCards[2][4] = new JButton("ADV 18");
-		playerCards[2][4].setBounds(0, 623, 80, 120);
-		frame.getContentPane().add(playerCards[2][4]);
+	 playerCards[1][4] = new JButton("ADV 18");
+		playerCards[1][4].setBounds(0, 623, 80, 120);
+		frame.getContentPane().add(playerCards[1][4]);
 		
-		playerCards[2][5] = new JButton("ADV 19");
-		playerCards[2][5].setBounds(76, 74, 80, 120);
-		frame.getContentPane().add(playerCards[2][5]);
+		playerCards[1][5] = new JButton("ADV 19");
+		playerCards[1][5].setBounds(76, 74, 80, 120);
+		frame.getContentPane().add(playerCards[1][5]);
 		
-		 playerCards[2][6] = new JButton("ADV 20");
-		playerCards[2][6].setBounds(76, 186, 80, 120);
-		frame.getContentPane().add(playerCards[2][6]);
+		 playerCards[1][6] = new JButton("ADV 20");
+		playerCards[1][6].setBounds(76, 186, 80, 120);
+		frame.getContentPane().add(playerCards[1][6]);
 		
-		 playerCards[2][7] = new JButton("ADV 21");
-		playerCards[2][7].setBounds(76, 298, 80, 120);
-		frame.getContentPane().add(playerCards[2][7]);
+		 playerCards[1][7] = new JButton("ADV 21");
+		playerCards[1][7].setBounds(76, 298, 80, 120);
+		frame.getContentPane().add(playerCards[1][7]);
 		
-		 playerCards[2][8] = new JButton("ADV 22");
-		playerCards[2][8].setBounds(76, 408, 80, 120);
-		frame.getContentPane().add(playerCards[2][8]);
+		 playerCards[1][8] = new JButton("ADV 22");
+		playerCards[1][8].setBounds(76, 408, 80, 120);
+		frame.getContentPane().add(playerCards[1][8]);
 		
-		 playerCards[2][9] = new JButton("ADV 23");
+		 playerCards[1][9] = new JButton("ADV 23");
 
-		 playerCards[2][9].setBounds(76, 523, 80, 120);
+		 playerCards[1][9].setBounds(76, 523, 80, 120);
 		frame.getContentPane().add(
-				 playerCards[2][9]);
+				 playerCards[1][9]);
 		
-		playerCards[2][10] = new JButton("ADV 24");
-		playerCards[2][10].setBounds(76, 639, 80, 120);
-		frame.getContentPane().add(playerCards[2][10]);
-		
-		
-		 playerCards[4][10] = new JButton("ADV 25");
-		playerCards[4][10].setBounds(1541, 98, 80, 120);
-		frame.getContentPane().add(playerCards[4][10]);
-		
-		 playerCards[4][11] = new JButton("ADV 26");
-		playerCards[4][11].setBounds(1541, 204, 80, 120);
-		frame.getContentPane().add(playerCards[4][11]);
-		
-		 playerCards[4][0] = new JButton("ADV 27");
-		playerCards[4][0].setBounds(1541, 318, 80, 120);
-		frame.getContentPane().add(playerCards[4][0]);
-		
-		  playerCards[4][1] = new JButton("ADV 28");
-		 playerCards[4][1].setBounds(1541, 434, 80, 120);
-		frame.getContentPane().add( playerCards[4][1]);
-		
-		  playerCards[4][2] = new JButton("ADV 29");
-		 playerCards[4][2].setBounds(1541, 547, 80, 120);
-		frame.getContentPane().add( playerCards[4][2]);
-		
-		  playerCards[4][3] = new JButton("ADV 30");
-		 playerCards[4][3].setBounds(1541, 660, 80, 120);
-		frame.getContentPane().add( playerCards[4][3]);
-		
-		  playerCards[4][4] = new JButton("ADV 31");
-		 playerCards[4][4].setBounds(1461, 98, 80, 120);
-		frame.getContentPane().add( playerCards[4][4]);
+		playerCards[1][10] = new JButton("ADV 24");
+		playerCards[1][10].setBounds(76, 639, 80, 120);
+		frame.getContentPane().add(playerCards[1][10]);
 		
 		
-		  playerCards[4][5] = new JButton("ADV 32");
-		 playerCards[4][5].setBounds(1461, 204, 80, 120);
-		frame.getContentPane().add( playerCards[4][5]);
+		 playerCards[3][10] = new JButton("ADV 25");
+		playerCards[3][10].setBounds(1541, 98, 80, 120);
+		frame.getContentPane().add(playerCards[3][10]);
 		
-		  playerCards[4][6] = new JButton("ADV 33");
-		 playerCards[4][6].setBounds(1461, 318, 80, 120);
-		frame.getContentPane().add( playerCards[4][6]);
+		 playerCards[3][11] = new JButton("ADV 26");
+		playerCards[3][11].setBounds(1541, 204, 80, 120);
+		frame.getContentPane().add(playerCards[3][11]);
 		
-		  playerCards[4][7] = new JButton("ADV 34");
-		 playerCards[4][7].setBounds(1461, 434, 80, 120);
-		frame.getContentPane().add( playerCards[4][7]);
+		 playerCards[3][0] = new JButton("ADV 27");
+		playerCards[3][0].setBounds(1541, 318, 80, 120);
+		frame.getContentPane().add(playerCards[3][0]);
 		
-		  playerCards[4][8] = new JButton("ADV 35");
-		 playerCards[4][8].setBounds(1461, 547, 80, 120);
-		frame.getContentPane().add( playerCards[4][8]);
+		  playerCards[3][1] = new JButton("ADV 28");
+		 playerCards[3][1].setBounds(1541, 434, 80, 120);
+		frame.getContentPane().add( playerCards[3][1]);
 		
-		  playerCards[4][9] = new JButton("ADV 36");
-		 playerCards[4][9].setBounds(1461, 660, 80, 120);
-		frame.getContentPane().add( playerCards[4][9]);
+		  playerCards[3][2] = new JButton("ADV 29");
+		 playerCards[3][2].setBounds(1541, 547, 80, 120);
+		frame.getContentPane().add( playerCards[3][2]);
+		
+		  playerCards[3][3] = new JButton("ADV 30");
+		 playerCards[3][3].setBounds(1541, 660, 80, 120);
+		frame.getContentPane().add( playerCards[3][3]);
+		
+		  playerCards[3][4] = new JButton("ADV 31");
+		 playerCards[3][4].setBounds(1461, 98, 80, 120);
+		frame.getContentPane().add( playerCards[3][4]);
+		
+		
+		  playerCards[3][5] = new JButton("ADV 32");
+		 playerCards[3][5].setBounds(1461, 204, 80, 120);
+		frame.getContentPane().add( playerCards[3][5]);
+		
+		  playerCards[3][6] = new JButton("ADV 33");
+		 playerCards[3][6].setBounds(1461, 318, 80, 120);
+		frame.getContentPane().add( playerCards[3][6]);
+		
+		  playerCards[3][7] = new JButton("ADV 34");
+		 playerCards[3][7].setBounds(1461, 434, 80, 120);
+		frame.getContentPane().add( playerCards[3][7]);
+		
+		  playerCards[3][8] = new JButton("ADV 35");
+		 playerCards[3][8].setBounds(1461, 547, 80, 120);
+		frame.getContentPane().add( playerCards[3][8]);
+		
+		  playerCards[3][9] = new JButton("ADV 36");
+		 playerCards[3][9].setBounds(1461, 660, 80, 120);
+		frame.getContentPane().add( playerCards[3][9]);
 		
 		  playerCards[0][0] = new JButton("ADV 37");
 		 playerCards[0][0].setBounds(169, 779, 80, 120);
@@ -425,26 +429,31 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		
 		 lblStage = new JLabel("Stage 1");
 		 lblStage.setForeground(Color.RED);
+		 lblStage.setVisible(false);
 			lblStage.setBounds(842, 339, 61, 16);
 			frame.getContentPane().add(lblStage);
 			
 			 lblStage_1 = new JLabel("Stage 2");
 			 lblStage_1.setForeground(Color.RED);
+			 lblStage_1.setVisible(false);
 			lblStage_1.setBounds(924, 338, 61, 16);
 			frame.getContentPane().add(lblStage_1);
 			
 			 lblStage_2 = new JLabel("Stage 3");
 			 lblStage_2.setForeground(Color.RED);
+			 lblStage_2.setVisible(false);
 			lblStage_2.setBounds(997, 338, 61, 16);
 			frame.getContentPane().add(lblStage_2);
 			
 			 lblStage_3 = new JLabel("Stage 4");
 			 lblStage_3.setForeground(Color.RED);
+			 lblStage_3.setVisible(false);
 			lblStage_3.setBounds(1085, 338, 61, 16);
 			frame.getContentPane().add(lblStage_3);
 			
 			 lblStage_4 = new JLabel("Stage 5");
 			 lblStage_4.setForeground(Color.RED);
+			 lblStage_4.setVisible(false);
 			lblStage_4.setBounds(1169, 337, 61, 16);
 			frame.getContentPane().add(lblStage_4);
 
@@ -455,9 +464,11 @@ lblNewLabel.setIcon(new ImageIcon(img));
 			}
 		});
 		btnTournamentCards_1.setBounds(205, 348, 130, 180);
+		btnTournamentCards_1.setVisible(false);
 		frame.getContentPane().add(btnTournamentCards_1);
 		
 		btnTournamentCards = new JButton("Tournament Cards");
+		btnTournamentCards.setVisible(false);
 		btnTournamentCards.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -473,13 +484,15 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		playerCards[2][14].setBounds(0, 742, 80, 120);
 		frame.getContentPane().add(playerCards[2][14]);
 		*/
-		JButton button_48 = new JButton("Tournament Cards");
-		button_48.setBounds(215, 547, 130, 180);
-		frame.getContentPane().add(button_48);
+		btnTournamentCards_2 = new JButton("Tournament Cards");
+		btnTournamentCards_2.setVisible(false);
+		btnTournamentCards_2.setBounds(215, 547, 130, 180);
+		frame.getContentPane().add(btnTournamentCards_2);
 		
-		JButton button_49 = new JButton("Tournament Cards");
-		button_49.setBounds(360, 547, 130, 180);
-		frame.getContentPane().add(button_49);
+		btnTournamentCards_3 = new JButton("Tournament Cards");
+		btnTournamentCards_3.setVisible(false);
+		btnTournamentCards_3.setBounds(360, 547, 130, 180);
+		frame.getContentPane().add(btnTournamentCards_3);
 		
 		
 		  playerCards[0][11] = new JButton("ADV 21");
@@ -623,6 +636,12 @@ lblNewLabel.setIcon(new ImageIcon(img));
 
 	public void showStages(int number) {
 		
+		lblStage.setVisible(false);
+		lblStage_2.setVisible(false);
+		lblStage_1.setVisible(false);
+		lblStage_4.setVisible(false);
+		lblStage_3.setVisible(false);
+		
 		if(number>=1) {
 			lblStage.setVisible(true);
 			playerCards[3][0].setVisible(true);
@@ -671,6 +690,9 @@ lblNewLabel.setIcon(new ImageIcon(img));
 	public void setTournamentCards(ArrayList<Cards> cards) {
 		btnTournamentCards.setVisible(false);
 		btnTournamentCards_1.setVisible(false);
+		btnTournamentCards_2.setVisible(false);
+		btnTournamentCards_3.setVisible(false);
+		
 		if(cards.size()>0) {
 			Image img = new ImageIcon(this.getClass().getResource(cards.get(0).getPicture())).getImage();
 			btnTournamentCards.setIcon(new ImageIcon(img));
@@ -680,6 +702,16 @@ lblNewLabel.setIcon(new ImageIcon(img));
 			Image img = new ImageIcon(this.getClass().getResource(cards.get(1).getPicture())).getImage();
 			btnTournamentCards_1.setIcon(new ImageIcon(img));
 			btnTournamentCards_1.setVisible(true);
+		}
+		if(cards.size()>2) {
+			Image img = new ImageIcon(this.getClass().getResource(cards.get(2).getPicture())).getImage();
+			btnTournamentCards_2.setIcon(new ImageIcon(img));
+			btnTournamentCards_2.setVisible(true);
+		}
+		if(cards.size()>3) {
+			Image img = new ImageIcon(this.getClass().getResource(cards.get(3).getPicture())).getImage();
+			btnTournamentCards_3.setIcon(new ImageIcon(img));
+			btnTournamentCards_3.setVisible(true);
 		}
 	}
 }

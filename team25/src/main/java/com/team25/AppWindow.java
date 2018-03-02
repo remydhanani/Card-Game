@@ -93,7 +93,7 @@ public class AppWindow implements IViewCallback, ActionListener {
 		frame.getMaximumSize();
 		frame.setBounds(0, 0, 2000, 1000);
 		JOptionPane.showMessageDialog(frame, "All players are Squire", "Dialog", JOptionPane.INFORMATION_MESSAGE);
-		JOptionPane.showMessageDialog(frame, "Click on Adventure Deck to deal", "Dialog", JOptionPane.INFORMATION_MESSAGE);
+		//JOptionPane.showMessageDialog(frame, "Click on Adventure Deck to deal", "Dialog", JOptionPane.INFORMATION_MESSAGE);
 		//adventureDeck.create();
 		//adventureDeck.shuffle();
 		
@@ -123,33 +123,15 @@ public class AppWindow implements IViewCallback, ActionListener {
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 frame.getContentPane().setLayout(null);
-		
-		 JLabel adventureLabel = new JLabel("Adventure Deck");
-		 adventureLabel.setBounds(517, 320, 117, 16);
-			adventureLabel.setForeground(Color.ORANGE);
-			frame.getContentPane().add(adventureLabel);
 			
 			JLabel storyLabel = new JLabel("Story Deck");
-			storyLabel.setBounds(692, 320, 117, 16);
+			storyLabel.setBounds(590, 320, 117, 16);
 			storyLabel.setForeground(Color.ORANGE);
 			frame.getContentPane().add(storyLabel);
-		
-		
-		 
-		JButton lblNewLabel = new JButton("Adventure cards");
-		lblNewLabel.setBounds(517, 348, 130, 180);
-		lblNewLabel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}		
-		});
-		
-		frame.getContentPane().add(lblNewLabel);
 Image img = new ImageIcon(this.getClass().getResource("/Cards/Card2.jpg")).getImage();
 		
-lblNewLabel.setIcon(new ImageIcon(img));
-		
 		JButton label = new JButton("Story cards");
-		label.setBounds(659, 348, 130, 180);
+		label.setBounds(590, 348, 130, 180);
 		label.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -420,7 +402,11 @@ lblNewLabel.setIcon(new ImageIcon(img));
 		Image rankCardImg = new ImageIcon(this.getClass().getResource("/Cards/Ranks_Squire.png")).getImage();
 		
 		player1RankCard = new JButton("Player1 Rank");
-		player1RankCard.setBounds(1150, 656, 107, 129);
+		player1RankCard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		player1RankCard.setBounds(997, 656, 107, 129);
 		player1RankCard.setIcon(new ImageIcon(rankCardImg));
 		frame.getContentPane().add(player1RankCard);
 		
